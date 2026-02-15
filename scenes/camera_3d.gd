@@ -1,6 +1,6 @@
 extends Camera3D
 
-@onready var look_target: Node3D = $"../../Player"
+@onready var look_target: Node3D = %Player
 @onready var target_direction: Node3D = $"../TargetDirection"
 @export var look_speed := 5
 
