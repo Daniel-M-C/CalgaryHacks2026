@@ -28,21 +28,3 @@ func empty_cart():
 		in_cart_list.pop_at(i)
 	# play pickup sound
 	pass
-
-
-### MUSIC
-const EGYPTIAN_RUINS_LOUD = preload("res://music/Egyptian Ruins LOUD.mp3")
-const FIRE_AMBIANCE = preload("res://music/Fire Ambiance.mp3")
-const RUINED = preload("res://music/Ruined.mp3")
-var audio
-var audio2
-
-func _input(event):
-	if event.is_action_pressed("5"):
-		audio = $AudioStreamPlayer
-		audio.stream = EGYPTIAN_RUINS_LOUD
-	if event.is_action_pressed("6"):
-		audio = $AudioStreamPlayer
-		audio.stream = RUINED
-		audio2 = $AudioStreamPlayer2
-		audio2.stream = FIRE_AMBIANCE

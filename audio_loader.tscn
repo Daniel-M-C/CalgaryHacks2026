@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dy5no30c8g265"]
+
+[ext_resource type="AudioStream" uid="uid://bxrcwp0v7dp50" path="res://music/Fire Ambiance.mp3" id="1_gcpsf"]
+[ext_resource type="Script" uid="uid://mn8ikcbbl1y5" path="res://audio_loader.gd" id="1_l1ng0"]
+[ext_resource type="AudioStream" uid="uid://88rq3wuice6x" path="res://music/Egyptian Ruins LOUD.mp3" id="2_l1ng0"]
+
+[node name="AudioLoader" type="Node3D" unique_id=740480947]
+script = ExtResource("1_l1ng0")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=2077208564]
+stream = ExtResource("1_gcpsf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=680741304]
+stream = ExtResource("2_l1ng0")
+autoplay = true

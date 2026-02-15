@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ycfu53n8qtri" path="res://main_menu/3.png" id="5_mvfl2"]
 [ext_resource type="Texture2D" uid="uid://bohe5eloiuqgi" path="res://main_menu/4.png" id="6_qvn4f"]
 [ext_resource type="Texture2D" uid="uid://dst15k4bpesp8" path="res://main_menu/main menu bg removed.png" id="7_g1omr"]
+[ext_resource type="AudioStream" uid="uid://88rq3wuice6x" path="res://music/Egyptian Ruins LOUD.mp3" id="9_6at21"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ia84y"]
 render_priority = 0
@@ -202,6 +203,10 @@ theme_override_font_sizes/font_size = 40
 text = "Fahrenheit 39-BC"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2085878036]
+stream = ExtResource("9_6at21")
+autoplay = true
 
 [connection signal="pressed" from="Container/VBoxContainer/Button1" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Container/VBoxContainer/Button3" to="." method="_on_exit_pressed"]

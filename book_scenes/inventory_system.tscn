@@ -1,17 +1,7 @@
 [gd_scene format=3 uid="uid://bm5gpkk7ptsf6"]
 
 [ext_resource type="Script" uid="uid://cgpsimhfeqtyt" path="res://book_scripts/inventory_system.gd" id="1_c8rho"]
-[ext_resource type="AudioStream" uid="uid://88rq3wuice6x" path="res://music/Egyptian Ruins LOUD.mp3" id="2_xlftu"]
-[ext_resource type="AudioStream" uid="uid://bxrcwp0v7dp50" path="res://music/Fire Ambiance.mp3" id="3_aumk3"]
 
 [node name="inventorySystem" type="Node" unique_id=1474714104]
 process_mode = 3
 script = ExtResource("1_c8rho")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=438109785]
-stream = ExtResource("2_xlftu")
-autoplay = true
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1553922894]
-stream = ExtResource("3_aumk3")
-autoplay = true
