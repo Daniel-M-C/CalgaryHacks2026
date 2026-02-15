@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cmhurp5l43uyp"]
+
+[ext_resource type="PackedScene" uid="uid://dgacawldkptgr" path="res://assets/3D/Pillar/Pillar Base.gltf" id="1_bbtlf"]
+
+[node name="Models Text Scene" type="Node3D" unique_id=225327813]
+
+[node name="blockbench_export" parent="." unique_id=1758977903 instance=ExtResource("1_bbtlf")]
