@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CalgaryHacks2026"
-run/main_scene="uid://d3vaj5uewf5uj"
+run/main_scene="uid://cmhurp5l43uyp"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.svg"
 <<<<<<<HEADconfig/icon="res://icon.svg"

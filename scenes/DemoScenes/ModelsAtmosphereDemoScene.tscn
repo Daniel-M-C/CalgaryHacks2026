@@ -94,4 +94,8 @@ mesh = SubResource("PlaneMesh_mkdix")
 [node name="Ember Particles" parent="SubViewportContainer/SubViewport" unique_id=895438678 instance=ExtResource("9_pegxi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6229334, 0)
 
+[node name="GPUParticles3D" parent="SubViewportContainer/SubViewport/Ember Particles" index="0" unique_id=1368292374]
+amount = 300
+
 [editable path="SubViewportContainer/SubViewport/Green_Book"]
+[editable path="SubViewportContainer/SubViewport/Ember Particles"]
