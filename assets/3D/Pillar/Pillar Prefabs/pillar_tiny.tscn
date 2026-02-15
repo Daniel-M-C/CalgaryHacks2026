@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://doyy4cauuv777"]
+
+[ext_resource type="PackedScene" uid="uid://b3n5iaimsijcv" path="res://assets/3D/Pillar/Pillar Parts/pillar_base.tscn" id="1_m832h"]
+[ext_resource type="PackedScene" uid="uid://b0v2jmvkph4ey" path="res://assets/3D/Pillar/Pillar Parts/pillar_top.tscn" id="2_ongf0"]
+
+[node name="Pillar Tiny" type="Node3D" unique_id=749607052]
+
+[node name="Pillar Base" parent="." unique_id=1890987077 instance=ExtResource("1_m832h")]
+
+[node name="Pillar Top" parent="." unique_id=1971508700 instance=ExtResource("2_ongf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
