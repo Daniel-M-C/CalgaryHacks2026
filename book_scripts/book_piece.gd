@@ -65,17 +65,18 @@ func _process(_delta):
 
 # setup colour for specific instance
 func setup():
-	match colour.Types:
-		colour.Types.BLUE:
-			$Sprite3D.modulate = Color.BLUE
-		colour.Types.RED:
-			$Sprite3D.modulate = Color.RED
-		colour.Types.YELLOW:
-			$Sprite3D.modulate = Color.YELLOW
-		colour.Types.GREEN:
-			$Sprite3D.modulate = Color.GREEN
-		_:
-			$Sprite3D.modulate = Color.PINK
+	if colour != null:
+		match colour.currentType:
+			colour.Types.BLUE:
+				$Sprite3D.modulate = Color.BLUE
+			colour.Types.RED:
+				$Sprite3D.modulate = Color.RED
+			colour.Types.YELLOW:
+				$Sprite3D.modulate = Color.YELLOW
+			colour.Types.GREEN:
+				$Sprite3D.modulate = Color.GREEN
+			_:
+				$Sprite3D.modulate = Color.PINK
 	pass
 
 # check if mouse is on book
