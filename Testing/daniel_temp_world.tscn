@@ -10,6 +10,9 @@ material = SubResource("StandardMaterial3D_noq0g")
 [sub_resource type="Environment" id="Environment_d7ahp"]
 ambient_light_color = Color(0.6313726, 0, 0, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_ni4ks"]
+size = Vector3(14.38, 1, 17.715)
+
 [node name="TempWorld" type="Node3D" unique_id=1143084137]
 
 [node name="DrawingTablet" parent="." unique_id=1178390468 instance=ExtResource("1_noq0g")]
@@ -21,9 +24,13 @@ mesh = SubResource("PrismMesh_noq0g")
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1152416873]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2024877028]
-transform = Transform3D(0.78712887, -0.3223997, 0.52582, 0, 0.8525125, 0.5227069, -0.6167886, -0.4114377, 0.6710372, 0.93558216, 0.85406315, 1.4781818)
+transform = Transform3D(0.78712887, -0.32239968, 0.52581996, 0, 0.8525125, 0.5227069, -0.6167886, -0.41143772, 0.67103714, 8.647542, 5.3544064, 4.3326435)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=604373643]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=525062724]
 environment = SubResource("Environment_d7ahp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=506354989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4455104, 0)
+mesh = SubResource("BoxMesh_ni4ks")
