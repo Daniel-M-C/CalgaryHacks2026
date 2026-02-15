@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dbatx7u5nlimp" path="res://Drawing/glyph.gd" id="1_wi8il"]
 
 [node name="Glyph" type="Line2D" unique_id=797166207]
-closed = true
 script = ExtResource("1_wi8il")
 
 [node name="TrueGlyph" type="Line2D" parent="." unique_id=399896755]

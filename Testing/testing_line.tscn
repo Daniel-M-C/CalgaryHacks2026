@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cx2hgvsgijghu"]
+
+[ext_resource type="Script" uid="uid://c7kswu2y33dxf" path="res://Testing/testing_line.gd" id="1_cgnk7"]
+[ext_resource type="Resource" uid="uid://cuu6o63x8bf26" path="res://Drawing/Glyphs/feather.tres" id="2_yykja"]
+
+[node name="TestingLine" type="Line2D" unique_id=20877894]
+points = PackedVector2Array(164, 183, 147, 226, 133, 256, 130, 298, 156, 318, 197, 340, 245, 364)
+script = ExtResource("1_cgnk7")
+glyph = ExtResource("2_yykja")
+part = 2

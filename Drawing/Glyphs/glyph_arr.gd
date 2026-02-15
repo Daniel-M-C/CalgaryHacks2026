@@ -9,8 +9,8 @@ Override :
 How to add and modify glyphs :
 	
 1. make a new glyph resource
-2. Set the arr : PackedVector2Array to the right shape
-	(can paint one with a line2d, then copy paste it from the .tscn to the .res)
+2. Use the testing_line.tsc to draw out the line. Then you can copy paste
+	from .tscn to .res
 3. Set the parts array (most will be in three parts). See var parts
 4. Add the preload to glyph.gd glyphs and the globals enum
 
