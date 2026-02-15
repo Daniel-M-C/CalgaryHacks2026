@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://cj1gg2cgasrk4"]
-
-[node name="Label" type="Label" unique_id=400806371]
-custom_minimum_size = Vector2(100, 25)
-offset_right = 100.0
-offset_bottom = 25.0
-text = "0/10"
-horizontal_alignment = 1
