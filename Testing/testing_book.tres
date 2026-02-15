@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="BookTypes" format=3 uid="uid://chbx4na2n10p7"]
+
+[ext_resource type="Script" uid="uid://blok3pvxenm7y" path="res://book_resources/BookTypes.gd" id="1_m476v"]
+
+[resource]
+script = ExtResource("1_m476v")
+glyph = 2
+metadata/_custom_type_script = "uid://blok3pvxenm7y"

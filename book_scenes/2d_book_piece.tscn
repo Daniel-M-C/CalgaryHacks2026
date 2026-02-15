@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://gi7ee2gij516"]
+
+[ext_resource type="Script" uid="uid://m3xoaeuqk3hw" path="res://book_scripts/2d_book_piece.gd" id="1_u3tub"]
+[ext_resource type="Texture2D" uid="uid://c5h2o8spn6ijx" path="res://icon.svg" id="1_yjo3v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3tub"]
+size = Vector2(50, 50)
+
+[node name="2dBookPiece" type="Node2D" unique_id=1734284020]
+script = ExtResource("1_u3tub")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=721529422]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=549389218]
+shape = SubResource("RectangleShape2D_u3tub")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1771665582]
+position = Vector2(-9.536743e-07, 9.536743e-07)
+scale = Vector2(0.40624997, 0.40624997)
+texture = ExtResource("1_yjo3v")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

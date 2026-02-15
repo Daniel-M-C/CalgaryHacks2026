@@ -9,6 +9,7 @@ Could try to do a slice of which are being matched currently
 @onready var true_glyph: Line2D = $TrueGlyph
 @onready var draw_pos : Vector2 =  Vector2.ZERO
 
+@export var curr_book : BookPiece2D
 
 # NOTE :
 # ensure this matches up with the global list of glyph names
@@ -138,9 +139,23 @@ func evaluate(other : PackedVector2Array, slice: Array = []) -> float:
 		
 	# return average score by some multiplier.
 	total_dist = total_dist/(n_points + 1)
-	#TODO may have to scale to screen size
 	return sqrt(total_dist)/glyphs[curr_glyph].difficulty
 
 
 func hide_hint() :
 	true_glyph.visible = false
+	
+func change_book(new_book : BookPiece2D) :
+	# change curr_line and piece
+	curr_glyph = new_book.colour.glyph
+	# TODO this may have to change
+	curr_parts = [new_book.colour.piece_num]
+	
+	# chnage back so we can re select it if we want to.
+	if curr_book :
+		curr_book.visible = true
+	curr_book = new_book
+	
+	# TODO set to actual things
+	set_parts([0,1,2,3,4,5,6,7,8,9,10])
+	pass

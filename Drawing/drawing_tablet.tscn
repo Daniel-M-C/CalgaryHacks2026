@@ -3,12 +3,17 @@
 [ext_resource type="Script" uid="uid://b6x0ndhty6h1i" path="res://Drawing/drawing_tablet.gd" id="1_eiwvq"]
 [ext_resource type="PackedScene" uid="uid://cvo141dnsobt6" path="res://Drawing/glyph.tscn" id="1_ymqpo"]
 [ext_resource type="Texture2D" uid="uid://c5h2o8spn6ijx" path="res://icon.svg" id="2_vebla"]
-[ext_resource type="Script" uid="uid://dck4xoit02roy" path="res://Drawing/book_piece_holder.gd" id="4_vebla"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ij2bk"]
 size = Vector2(50, 50)
 
-[node name="DrawingTablet" type="Node2D" unique_id=1178390468]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij2bk"]
+size = Vector2(278, 368)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vebla"]
+size = Vector2(284, 396)
+
+[node name="DrawingTablet" type="Node2D" unique_id=1178390468 groups=["dropable"]]
 script = ExtResource("1_eiwvq")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1732114929]
@@ -38,8 +43,20 @@ points = PackedVector2Array(159, 126, 109, 126, 65, 126, 28, 126, 27, 175, 28, 2
 closed = false
 curr_glyph = 3
 
+[node name="Area2D" type="Area2D" parent="BaseGlyph" unique_id=270858345 groups=["dropable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseGlyph/Area2D" unique_id=461638884 groups=["dropable"]]
+position = Vector2(201.12224, 200)
+shape = SubResource("RectangleShape2D_ij2bk")
+
 [node name="Drawing" type="Line2D" parent="." unique_id=760082188]
 position = Vector2(622.87775, 100)
+
+[node name="Area2D" type="Area2D" parent="Drawing" unique_id=1471731754 groups=["dropable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/Area2D" unique_id=425005825 groups=["dropable"]]
+position = Vector2(150.12225, 207)
+shape = SubResource("RectangleShape2D_vebla")
 
 [node name="Button" type="Button" parent="." unique_id=1881140096]
 offset_left = 881.0
@@ -61,36 +78,24 @@ position = Vector2(640, 100)
 [node name="Marker2D2" type="Marker2D" parent="Bounds" unique_id=1808643905]
 position = Vector2(980, 520)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=866225552]
+[node name="Books" type="Node2D" parent="." unique_id=223271922]
 
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=991987396]
-offset_left = 20.0
-offset_top = 65.0
-offset_right = 170.0
-offset_bottom = 581.0
+[node name="BookBoundsR" type="Node2D" parent="." unique_id=2025220214]
+position = Vector2(874, 0)
 
-[node name="BookPieceHolder" type="ItemList" parent="CanvasLayer/Panel" unique_id=39085980]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-max_columns = 2
-script = ExtResource("4_vebla")
+[node name="Marker2D" type="Marker2D" parent="BookBoundsR" unique_id=406680878]
+position = Vector2(105, 100)
 
-[node name="Panel2" type="Panel" parent="CanvasLayer" unique_id=64160]
-offset_left = 990.0
-offset_top = 67.0
-offset_right = 1140.0
-offset_bottom = 583.0
+[node name="Marker2D2" type="Marker2D" parent="BookBoundsR" unique_id=78262832]
+position = Vector2(218, 520)
 
-[node name="RestorationHolder" type="ItemList" parent="CanvasLayer/Panel2" unique_id=1939286885]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="BookBoundsL" type="Node2D" parent="." unique_id=54537047]
+position = Vector2(-40, 0)
+
+[node name="Marker2D" type="Marker2D" parent="BookBoundsL" unique_id=1977512271]
+position = Vector2(105, 100)
+
+[node name="Marker2D2" type="Marker2D" parent="BookBoundsL" unique_id=1278170283]
+position = Vector2(218, 520)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

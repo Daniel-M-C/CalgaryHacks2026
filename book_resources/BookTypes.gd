@@ -8,7 +8,16 @@ enum Types {
 	GREEN
 }
 @export var currentType:Types
+
+## Which part of the glyph.
+## Ignored for restorations (completed books)
 @export var piece_num := 3
+@export var glyph : Globals.GLYPH_NAME = 0
+
+@export var is_restoration := false
+## Only used for restorations.
+## Keeps track of what has already been drawn.
+var drawn_points : Array[PackedVector2Array]
 
 var max_num_of_pieces = 1
 

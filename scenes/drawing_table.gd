@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var drawing_scene : DrawingTable
+@export var drawing_scene : DrawingTablet
 @onready var area_3d: Area3D = $Area3D
 @export var player : Player
 
@@ -14,8 +14,8 @@ func _ready() :
 			player = get_tree().current_scene.find_children("", 'Player')[0]
 
 	if ! drawing_scene :
-		if len(get_tree().current_scene.find_children("", 'DrawingTable')) > 0 :
-			drawing_scene = get_tree().current_scene.find_children("", 'DrawingTable')[0]
+		if len(get_tree().current_scene.find_children("", 'DrawingTablet')) > 0 :
+			drawing_scene = get_tree().current_scene.find_children("", 'DrawingTablet')[0]
 
 func _unhandled_input(event: InputEvent) -> void:
 	pass

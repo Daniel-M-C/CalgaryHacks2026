@@ -1,4 +1,4 @@
-class_name DrawingTable
+class_name DrawingTablet
 extends Node2D
 
 """
@@ -14,8 +14,16 @@ and hosting the original glyph.
 @onready var timer: Timer = $Timer
 var draw_pos : Vector2
 
+## Sets limits to where you can draw
 @onready var bounds: Node2D = $Bounds
+## For placing books
+@onready var book_bounds_l: Node2D = $BookBoundsL
+## For placing restorations
+@onready var book_bounds_r: Node2D = $BookBoundsR
+## To be a parent to books
+@onready var books_node: Node2D = $Books
 
+const _2D_BOOK_PIECE = preload("uid://gi7ee2gij516")
 
 var drawing_points : PackedVector2Array
 
@@ -56,3 +64,33 @@ func _process(delta: float) -> void :
 func _on_button_pressed() -> void:
 	var score = base_glyph.evaluate(drawing.points)
 	print('score =', score) 
+
+
+## Called from the inventory manager on startup
+func make_books(books : Array[BookTypes], restorations : Array[BookTypes]) :
+	
+	# Books on the left to place a reference
+	for i in books :
+		var new_book : BookPiece2D = _2D_BOOK_PIECE.instantiate()
+		new_book.colour = i
+		# place in a random position (for fun)
+		books_node.add_child(new_book)
+		new_book.starting_pos.x = randf_range(book_bounds_l.get_child(0).global_position.x, 
+											  book_bounds_l.get_child(1).global_position.x)
+		new_book.starting_pos.y = randf_range(book_bounds_l.get_child(0).global_position.y, 
+											  book_bounds_l.get_child(1).global_position.y)
+		new_book.position = new_book.starting_pos
+	
+	# restorations on the right to draw/continue drawing them
+	for i in restorations :
+		var new_book : BookPiece2D = _2D_BOOK_PIECE.instantiate()
+		new_book.colour = i
+		books_node.add_child(new_book)
+		# place in a random position (for fun)
+		new_book.starting_pos.x = randf_range(book_bounds_r.get_child(0).global_position.x, 
+											  book_bounds_r.get_child(1).global_position.x)
+		new_book.starting_pos.y = randf_range(book_bounds_r.get_child(0).global_position.y, 
+											  book_bounds_r.get_child(1).global_position.y)
+		new_book.position = new_book.starting_pos
+	pass
+	
