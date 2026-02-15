@@ -1,3 +1,4 @@
+class_name DrawingTable
 extends Node2D
 
 """

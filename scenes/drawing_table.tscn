@@ -1,7 +1,18 @@
 [gd_scene format=3 uid="uid://cqogxcy4r1vk1"]
 
 [ext_resource type="PackedScene" uid="uid://dbiyhyuk2tr2w" path="res://assets/3D/Table/Table.gltf" id="1_7la1q"]
+[ext_resource type="Script" uid="uid://xl76avi704d" path="res://scenes/drawing_table.gd" id="1_y6h8e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7la1q"]
+size = Vector3(5.291931, 2.137207, 4.574646)
 
 [node name="DrawingTable" type="Node3D" unique_id=1601868349]
+script = ExtResource("1_y6h8e")
 
 [node name="blockbench_export" parent="." unique_id=1181807856 instance=ExtResource("1_7la1q")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2105236040]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=659181282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09561157, 0.5686035, 0.06802368)
+shape = SubResource("BoxShape3D_7la1q")

@@ -9,7 +9,7 @@ var books_completed :Array
 # limit for ruin collection
 var cart_limit = 3
 var in_cart = 0
-var in_cart_list: Array
+var in_cart_list: Array[BookPiece]
 
 var is_dragging:BookPiece
 

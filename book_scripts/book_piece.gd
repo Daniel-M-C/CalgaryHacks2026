@@ -14,6 +14,10 @@ var initialPos
 var world_mouse_pos
 var in_cart = false
 
+# variables for glyphs
+var glyph : Globals.GLYPH_NAME = 0 
+var part_num = 0 # 0-2, need all at some point.
+
 func _ready():
 	# setup modulate for colours
 	setup()

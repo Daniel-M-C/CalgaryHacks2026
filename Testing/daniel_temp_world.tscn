@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://b8nqflfato8wv"]
 
 [ext_resource type="PackedScene" uid="uid://c7ec3nc5xew34" path="res://Drawing/drawing_tablet.tscn" id="1_noq0g"]
+[ext_resource type="PackedScene" uid="uid://duefxk7w1h6b7" path="res://character_mouvement/character_mouvement.tscn" id="2_2c1jk"]
+[ext_resource type="PackedScene" uid="uid://cqogxcy4r1vk1" path="res://scenes/drawing_table.tscn" id="2_erhgy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noq0g"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_noq0g"]
 material = SubResource("StandardMaterial3D_noq0g")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2c1jk"]
+size = Vector3(14.817017, 1, 16.432678)
 
 [sub_resource type="Environment" id="Environment_d7ahp"]
 ambient_light_color = Color(0.6313726, 0, 0, 1)
@@ -16,12 +21,17 @@ size = Vector3(14.38, 1, 17.715)
 [node name="TempWorld" type="Node3D" unique_id=1143084137]
 
 [node name="DrawingTablet" parent="." unique_id=1178390468 instance=ExtResource("1_noq0g")]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1333555291]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83400875, -0.2358861, -0.30878007)
 mesh = SubResource("PrismMesh_noq0g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1152416873]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1615586742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5149536, -0.471843, -0.22598267)
+shape = SubResource("BoxShape3D_2c1jk")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2024877028]
 transform = Transform3D(0.78712887, -0.32239968, 0.52581996, 0, 0.8525125, 0.5227069, -0.6167886, -0.41143772, 0.67103714, 8.647542, 5.3544064, 4.3326435)
@@ -31,6 +41,12 @@ transform = Transform3D(0.78712887, -0.32239968, 0.52581996, 0, 0.8525125, 0.522
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=525062724]
 environment = SubResource("Environment_d7ahp")
 
+[node name="character_mouvement" parent="." unique_id=401240132 instance=ExtResource("2_2c1jk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2859988, 0)
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=506354989]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4455104, 0)
 mesh = SubResource("BoxMesh_ni4ks")
+
+[node name="DrawingTable" parent="." unique_id=1601868349 instance=ExtResource("2_erhgy")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.5722704, 0, 1.1927869)
