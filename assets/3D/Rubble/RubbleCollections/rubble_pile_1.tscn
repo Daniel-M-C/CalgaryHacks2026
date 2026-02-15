@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bsbwlqpd5okfg"]
+
+[ext_resource type="PackedScene" uid="uid://st50kpanrahm" path="res://assets/3D/Rubble/RubbleItems/pillar_chunk_1.tscn" id="1_nlrru"]
+[ext_resource type="PackedScene" uid="uid://ci3drnyn56bgl" path="res://assets/3D/Book/book.tscn" id="2_33uyd"]
+
+[node name="RubblePile1" type="Node3D" unique_id=1178057208]
+
+[node name="Pillar Chunk 1" parent="." unique_id=1904932001 instance=ExtResource("1_nlrru")]
+transform = Transform3D(1, 0, 0, 0, 0.597933, -0.8015461, 0, 0.8015461, 0.597933, 0, -0.16894618, -0.37021065)
+
+[node name="Book" parent="." unique_id=720773308 instance=ExtResource("2_33uyd")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.45537347, 0, -0.2527278)
+tint = Color(0.28085, 0.41, 0.1517, 1)
