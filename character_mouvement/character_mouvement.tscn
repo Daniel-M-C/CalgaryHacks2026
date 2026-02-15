@@ -86,8 +86,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bilrw"]
-radius = 0.6118164
-height = 1.4416504
+radius = 0.4
+height = 1.5
 
 [node name="character_mouvement" type="Node3D" unique_id=401240132]
 
