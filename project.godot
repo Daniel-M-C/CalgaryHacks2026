@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="CalgaryHacks2026"
+config/name="Fahrenheit48BC"
 run/main_scene="uid://d3vaj5uewf5uj"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.svg"
