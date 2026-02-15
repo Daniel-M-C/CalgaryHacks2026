@@ -74,7 +74,7 @@ func setup():
 
 # check if mouse is on book
 func _on_area_3d_mouse_entered():
-	if InventorySystem.is_dragging == null && !in_cart && InventorySystem.in_cart <8:
+	if InventorySystem.is_dragging == null && !in_cart && InventorySystem.in_cart <3:
 		dragable = true
 		scale = Vector3(1.05,1.05,1.05)
 	pass 

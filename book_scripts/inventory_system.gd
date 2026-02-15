@@ -20,11 +20,11 @@ func put_in_cart(book_piece:BookPiece):
 		pass
 	pass
 	
+	# call this when laeving the ruins
 func empty_cart():
 	for i in range(in_cart_list.size()):
 		print("Index:", i, "Value:", in_cart_list[i])
 		book_pieces.append(in_cart_list[i])
-		in_cart_list[i].queue_free()
 		in_cart_list.pop_at(i)
 	# play pickup sound
 	pass
