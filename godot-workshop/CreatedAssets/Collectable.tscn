@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://064sav74v2eh"]
+
+[ext_resource type="Script" uid="uid://bel2t84ssjlbt" path="res://CreatedAssets/collectable.gd" id="1_i4qn4"]
+[ext_resource type="Texture2D" uid="uid://cjrqtvi1c4dxf" path="res://workshop_new.png" id="3_0hi5h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0o6h"]
+atlas = ExtResource("3_0hi5h")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmdrv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0o6h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qv3hs"]
+
+[node name="Collectable" type="Area2D" unique_id=292314448]
+script = ExtResource("1_i4qn4")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=176771182]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_kmdrv")
+offset = Vector2(0, -0.135)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1732172807]
+shape = SubResource("RectangleShape2D_qv3hs")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
