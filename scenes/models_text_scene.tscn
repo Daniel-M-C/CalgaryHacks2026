@@ -3,13 +3,41 @@
 [ext_resource type="PackedScene" uid="uid://bdqfnpd0eqh3n" path="res://assets/3D/Pillar/Pillar Base.gltf" id="1_bbtlf"]
 [ext_resource type="PackedScene" uid="uid://cdr1ne188s0aw" path="res://assets/3D/Pillar/Pillar Middle.gltf" id="2_wpyh0"]
 [ext_resource type="PackedScene" uid="uid://bdtupcqa78jx0" path="res://assets/3D/Pillar/Pillar Top.gltf" id="3_rt0sf"]
+[ext_resource type="PackedScene" uid="uid://dbiyhyuk2tr2w" path="res://assets/3D/Table/Table.gltf" id="4_rt0sf"]
+[ext_resource type="PackedScene" uid="uid://ci3drnyn56bgl" path="res://assets/3D/Book/book.tscn" id="5_qe8dp"]
+
+[sub_resource type="Environment" id="Environment_qe8dp"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+ambient_light_color = Color(0.81, 0.72373503, 0.23490001, 1)
+ambient_light_energy = 10.0
 
 [node name="Models Text Scene" type="Node3D" unique_id=225327813]
 
-[node name="blockbench_export" parent="." unique_id=512801546 instance=ExtResource("1_bbtlf")]
+[node name="blockbench_export" parent="." unique_id=679051320 instance=ExtResource("1_bbtlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004247248, 0, 0)
 
 [node name="blockbench_export2" parent="." unique_id=622792422 instance=ExtResource("2_wpyh0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 
 [node name="blockbench_export3" parent="." unique_id=143087741 instance=ExtResource("3_rt0sf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+
+[node name="blockbench_export4" parent="." unique_id=804565928 instance=ExtResource("4_rt0sf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.825)
+
+[node name="Book" parent="." unique_id=406925877 instance=ExtResource("5_qe8dp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -2.5)
+tint = Color(0.37440425, 0.54872835, 0.94304395, 1)
+
+[node name="Green_Book" parent="." unique_id=720773308 instance=ExtResource("5_qe8dp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226, 1, -2.5)
+tint = Color(0.4909224, 0.64187783, 0.15888146, 1)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=911997773]
+transform = Transform3D(-0.49826676, 0, 0.86702377, 0, 1, 0, -0.86702377, 0, -0.49826676, 3.7206993, 1.8460927, -3.4446871)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=58764876]
+environment = SubResource("Environment_qe8dp")
+
+[editable path="Green_Book"]
