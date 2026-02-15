@@ -58,6 +58,7 @@ curve = SubResource("Curve3D_osd1g")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="SubViewportContainer/SubViewport/Camera Rig/Path3D" unique_id=1403801996]
 transform = Transform3D(0.9999996, 0, 0, 0, 1, 0, 0, 0, 0.9999996, 0, 2, 5)
+rotation_mode = 0
 
 [node name="Camera Pivot" type="Node3D" parent="SubViewportContainer/SubViewport/Camera Rig/Path3D/PathFollow3D" unique_id=23208703]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
