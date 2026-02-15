@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ul7abddrrdol" path="res://assets/2D/Environment/Tile.png" id="9_8w16j"]
 [ext_resource type="Script" path="res://scenes/embers.gd" id="10_oirjf"]
 [ext_resource type="PackedScene" uid="uid://sju33nknlu3" path="res://assets/3D/Ember Particle/ember_particles.tscn" id="11_7s0x3"]
-[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="12_7gjfk"]
+[ext_resource type="PackedScene" uid="uid://c14ktcm2tuleq" path="res://scenes/player.tscn" id="12_7gjfk"]
 [ext_resource type="PackedScene" uid="uid://deymjgle1lnlq" path="res://book_scenes/book_piece.tscn" id="13_ks0uu"]
 [ext_resource type="Script" uid="uid://blok3pvxenm7y" path="res://book_resources/BookTypes.gd" id="14_tuqh2"]
 
@@ -27,6 +27,12 @@ size = Vector2(50, 50)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1pjv0"]
 
+[sub_resource type="Resource" id="Resource_6m7ma"]
+script = ExtResource("14_tuqh2")
+currentType = 3
+piece_num = 1
+metadata/_custom_type_script = "uid://blok3pvxenm7y"
+
 [sub_resource type="Resource" id="Resource_rkdsq"]
 script = ExtResource("14_tuqh2")
 piece_num = 1
@@ -39,6 +45,12 @@ metadata/_custom_type_script = "uid://blok3pvxenm7y"
 
 [sub_resource type="Resource" id="Resource_rrb35"]
 script = ExtResource("14_tuqh2")
+metadata/_custom_type_script = "uid://blok3pvxenm7y"
+
+[sub_resource type="Resource" id="Resource_4j8mw"]
+script = ExtResource("14_tuqh2")
+currentType = 1
+piece_num = 1
 metadata/_custom_type_script = "uid://blok3pvxenm7y"
 
 [node name="RuinedLibrary" type="Node3D" unique_id=816043871]
@@ -245,6 +257,10 @@ mesh = SubResource("PlaneMesh_j1f08")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4923321, 0)
 shape = SubResource("WorldBoundaryShape3D_1pjv0")
 
+[node name="bookPiece" parent="Environment/Room Surfaces" unique_id=1447081182 instance=ExtResource("13_ks0uu")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.9441967, 0.6123321, -2.5054233)
+colour = SubResource("Resource_6m7ma")
+
 [node name="Embers" type="Node" parent="Environment" unique_id=674865489]
 script = ExtResource("10_oirjf")
 
@@ -264,7 +280,7 @@ amount = 200
 [node name="Player" parent="." unique_id=1296102161 instance=ExtResource("12_7gjfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105261326, 0.84944606, 0.046559334)
 
-[node name="bookPiece" parent="." unique_id=1447081182 instance=ExtResource("13_ks0uu")]
+[node name="bookPiece" parent="." unique_id=531981332 instance=ExtResource("13_ks0uu")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.2657437, 0.6843319, 1.150146)
 colour = SubResource("Resource_rkdsq")
 
@@ -278,6 +294,10 @@ colour = SubResource("Resource_rrb35")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=658750526]
 transform = Transform3D(1, 0, 0, 0, 0.8480481, 0.52991927, 0, -0.52991927, 0.8480481, 0, 3.7319596, 4.2783937)
+
+[node name="bookPiece4" parent="." unique_id=1963983375 instance=ExtResource("13_ks0uu")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.6705632, 0.6123321, 2.5981622)
+colour = SubResource("Resource_4j8mw")
 
 [editable path="Environment/Rubble/RubblePile2"]
 [editable path="Environment/Rubble/RubblePile3"]
