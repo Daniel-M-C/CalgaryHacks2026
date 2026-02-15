@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://blok3pvxenm7y" path="res://book_resources/BookTypes.gd" id="2_3sa3v"]
 [ext_resource type="PackedScene" uid="uid://bm5gpkk7ptsf6" path="res://book_scenes/inventory_system.tscn" id="3_gfrcf"]
 [ext_resource type="PackedScene" uid="uid://dv3xgekaehj3a" path="res://book_scenes/cart.tscn" id="4_3sa3v"]
-[ext_resource type="PackedScene" uid="uid://duefxk7w1h6b7" path="res://character_mouvement/character_mouvement.tscn" id="5_gfrcf"]
+[ext_resource type="PackedScene" uid="uid://dffuk3k86bn1g" path="res://scenes/player.tscn" id="5_gfrcf"]
 
 [sub_resource type="Resource" id="Resource_dfv7a"]
 script = ExtResource("2_3sa3v")

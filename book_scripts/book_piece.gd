@@ -24,15 +24,16 @@ func _unhandled_input(event):
 		if in_ruins:
 			if event is InputEventMouseMotion:
 				var currentCamera = get_viewport().get_camera_3d()
-				var params = PhysicsRayQueryParameters3D.new()
-				params.from = currentCamera.project_ray_origin(event.position)
-				params.to = currentCamera.project_position(event.position,1000)
-				var worldspace = get_world_3d().direct_space_state
-				world_mouse_pos = worldspace.intersect_ray(params)
-
+				if currentCamera != null:
+					var params = PhysicsRayQueryParameters3D.new()
+					params.from = currentCamera.project_ray_origin(event.position)
+					params.to = currentCamera.project_position(event.position,1000)
+					var worldspace = get_world_3d().direct_space_state
+					world_mouse_pos = worldspace.intersect_ray(params)
+				
 func _process(_delta):
 	
-	if in_cart:
+	if in_cart && body_ref != null:
 		global_position = Vector3(body_ref.global_position.x,global_position.y,body_ref.global_position.z)
 	
 	# drag and drop for ruins
@@ -51,6 +52,7 @@ func _process(_delta):
 			dragable = false
 			if is_inside_dropable:
 				in_cart = true
+				scale = Vector3(0.3,0.3,0.3)
 				tween.tween_property(self, "global_position",body_ref.global_position+Vector3(0,0.5+(InventorySystem.in_cart*0.5),0),0.2)
 				InventorySystem.put_in_cart(self)
 				
@@ -80,13 +82,13 @@ func setup():
 func _on_area_3d_mouse_entered():
 	if InventorySystem.is_dragging == null && !in_cart && InventorySystem.in_cart <InventorySystem.cart_limit:
 		dragable = true
-		scale = Vector3(1.05,1.05,1.05)
+		scale = Vector3(0.5,0.5,0.5)
 	pass 
 
 func _on_area_3d_mouse_exited():
 	if InventorySystem.is_dragging != self:
 		dragable = false
-		scale = Vector3(1,1,1)
+		scale = Vector3(0.3,0.3,0.3)
 	pass 
 
 # check if book is on cart
@@ -96,10 +98,14 @@ func _on_area_3d_area_entered(area):
 		is_inside_dropable = true
 		body_ref = area
 		print("In the area")
+		print(body_ref)
 		pass
 	pass 
 
 func _on_area_3d_area_exited(area):
-	if area.is_in_group("dropable"):
+	if area.is_in_group("dropable") && !in_cart:
 		is_inside_dropable = false
+		body_ref = null
+		
 	pass
+	

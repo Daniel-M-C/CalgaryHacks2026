@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b8nqflfato8wv"]
 
-[ext_resource type="PackedScene" uid="uid://c7ec3nc5xew34" path="res://Drawing/drawing_tablet.tscn" id="1_noq0g"]
+[ext_resource type="PackedScene" path="res://Drawing/drawing_tablet.tscn" id="1_noq0g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noq0g"]
 
