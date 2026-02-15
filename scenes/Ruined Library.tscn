@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bn4tbtvt8qwss" path="res://scenes/playerplaceholder.gd" id="1_sxbaw"]
 [ext_resource type="Texture2D" uid="uid://c5h2o8spn6ijx" path="res://icon.svg" id="2_p3me4"]
 [ext_resource type="PackedScene" uid="uid://bsbwlqpd5okfg" path="res://assets/3D/Rubble/RubbleCollections/rubble_pile_1.tscn" id="4_osd1g"]
+[ext_resource type="Texture2D" uid="uid://ul7abddrrdol" path="res://assets/2D/Environment/Tile.png" id="6_u051o"]
 
 [sub_resource type="Curve3D" id="Curve3D_osd1g"]
 _data = {
@@ -20,6 +21,15 @@ uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_27t2a"]
 material = SubResource("StandardMaterial3D_osd1g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbwfx"]
+albedo_texture = ExtResource("6_u051o")
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_j1f08"]
+material = SubResource("StandardMaterial3D_kbwfx")
+size = Vector2(50, 50)
 
 [node name="RuinedLibrary" type="Node3D" unique_id=816043871]
 
@@ -67,5 +77,16 @@ script = ExtResource("1_sxbaw")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Player" unique_id=1413195793]
 mesh = SubResource("BoxMesh_27t2a")
 
-[node name="RubblePile1" parent="." unique_id=1178057208 instance=ExtResource("4_osd1g")]
+[node name="Environment" type="Node" parent="." unique_id=1465947663]
+
+[node name="Rubble" type="Node" parent="Environment" unique_id=1978895626]
+
+[node name="RubblePile1" parent="Environment/Rubble" unique_id=1178057208 instance=ExtResource("4_osd1g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2577463, 0, -1.2629447)
+
+[node name="Pillars" type="Node" parent="Environment" unique_id=352357946]
+
+[node name="Bookshelves" type="Node" parent="Environment" unique_id=221691427]
+
+[node name="Floor" type="MeshInstance3D" parent="Environment" unique_id=1106253892]
+mesh = SubResource("PlaneMesh_j1f08")
