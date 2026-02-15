@@ -14,6 +14,9 @@ background_mode = 1
 background_color = Color(1, 1, 1, 1)
 ambient_light_color = Color(0.81, 0.72373503, 0.23490001, 1)
 ambient_light_energy = 10.0
+fog_enabled = true
+fog_light_color = Color(0.63244253, 0.23946568, 0.27221385, 1)
+fog_density = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pegxi"]
 albedo_texture = ExtResource("8_oa8li")
