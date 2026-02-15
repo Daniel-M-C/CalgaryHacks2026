@@ -81,11 +81,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Camera Rig/Path3D/PathFollow3D/Camera Pivot" unique_id=801804759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -3)
 script = ExtResource("1_p3me4")
+look_speed = null
 
 [node name="TargetDirection" type="Node3D" parent="SubViewportContainer/SubViewport/Camera Rig/Path3D/PathFollow3D/Camera Pivot" unique_id=818351117]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -3)
 
-[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=401240132 instance=ExtResource("4_itwbr")]
+[node name="PlayerChar" parent="SubViewportContainer/SubViewport" unique_id=401240132 instance=ExtResource("4_itwbr")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
@@ -261,5 +262,6 @@ visible = false
 [node name="GPUParticles3D" parent="Environment/Embers/Ember Particles" index="0" unique_id=1368292374]
 amount = 200
 
+[editable path="SubViewportContainer/SubViewport/PlayerChar"]
 [editable path="Environment/Rubble/RubblePile2"]
 [editable path="Environment/Embers/Ember Particles"]
