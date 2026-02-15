@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dtojxq04xlhyt" path="res://assets/3D/Pillar/Pillar Parts/pillar_middle.tscn" id="2_h6k5g"]
 [ext_resource type="PackedScene" uid="uid://b0v2jmvkph4ey" path="res://assets/3D/Pillar/Pillar Parts/pillar_top.tscn" id="3_uqocw"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7sp75"]
+
 [node name="Pillar Small" type="Node3D" unique_id=699153814]
 
 [node name="Pillar Base" parent="." unique_id=1890987077 instance=ExtResource("1_7sp75")]
@@ -12,3 +14,9 @@
 
 [node name="Pillar Top" parent="." unique_id=1971508700 instance=ExtResource("3_uqocw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1247611426]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1618892886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_7sp75")
