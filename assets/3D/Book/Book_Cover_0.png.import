@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7r3ibr8lvgjc"
-path.s3tc="res://.godot/imported/Pillar Base_0.png-39daa4c7f6971fa72c04a8b7f10cecbf.s3tc.ctex"
+uid="uid://ctax286f6yojc"
+path.s3tc="res://.godot/imported/Book_Cover_0.png-4b1dd5ae4bffbd3a0fa592515e5f9e7b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "078e77a0940ec51ef6b6788399422b20"
+"md5": "b5169edf34bc0aba4dd3224aec3149cf"
 }
 
 [deps]
 
-source_file="res://assets/3D/Pillar/Pillar Base_0.png"
-dest_files=["res://.godot/imported/Pillar Base_0.png-39daa4c7f6971fa72c04a8b7f10cecbf.s3tc.ctex"]
+source_file="res://assets/3D/Book/Book_Cover_0.png"
+dest_files=["res://.godot/imported/Book_Cover_0.png-4b1dd5ae4bffbd3a0fa592515e5f9e7b.s3tc.ctex"]
 
 [params]
 

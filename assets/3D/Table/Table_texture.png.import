@@ -2,24 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7r3ibr8lvgjc"
-path.s3tc="res://.godot/imported/Pillar Base_0.png-39daa4c7f6971fa72c04a8b7f10cecbf.s3tc.ctex"
+uid="uid://bto84356a0iyn"
+path="res://.godot/imported/Table_texture.png-16ddf5905fa4b8fcffd1f541940025d7.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
-generator_parameters={
-"md5": "078e77a0940ec51ef6b6788399422b20"
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/3D/Pillar/Pillar Base_0.png"
-dest_files=["res://.godot/imported/Pillar Base_0.png-39daa4c7f6971fa72c04a8b7f10cecbf.s3tc.ctex"]
+source_file="res://assets/3D/Table/Table_texture.png"
+dest_files=["res://.godot/imported/Table_texture.png-16ddf5905fa4b8fcffd1f541940025d7.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -27,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -41,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
