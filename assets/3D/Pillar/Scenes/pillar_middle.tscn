@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dtojxq04xlhyt"]
+
+[ext_resource type="PackedScene" uid="uid://cdr1ne188s0aw" path="res://assets/3D/Pillar/Pillar Middle.gltf" id="1_7cmf1"]
+
+[node name="Pillar Middle" unique_id=1699587092 instance=ExtResource("1_7cmf1")]
