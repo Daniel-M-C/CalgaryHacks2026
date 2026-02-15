@@ -13,3 +13,9 @@ config_version=5
 config/name="CalgaryHacks2026"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=3
+window/size/borderless=true
+window/stretch/mode="viewport"
