@@ -1,6 +1,6 @@
 extends Camera3D
 
-@onready var look_target: Node3D = %PlayerChar.get_child()
+@onready var look_target: Node3D = %PlayerChar.get_child(0)
 @onready var target_direction: Node3D = $"../TargetDirection"
 @export var look_speed := 5
 
