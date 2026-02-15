@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://deymjgle1lnlq"]
+
+[ext_resource type="Script" uid="uid://uuxh5qsdg6ge" path="res://book_scripts/book_piece.gd" id="1_t3qse"]
+[ext_resource type="Texture2D" uid="uid://c5h2o8spn6ijx" path="res://icon.svg" id="1_w0jvl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t3qse"]
+
+[node name="bookPiece" type="Node3D" unique_id=1447081182]
+script = ExtResource("1_t3qse")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2087548564]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1656292517]
+shape = SubResource("BoxShape3D_t3qse")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=515028998]
+billboard = 1
+texture = ExtResource("1_w0jvl")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]
