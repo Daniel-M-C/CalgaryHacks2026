@@ -16,16 +16,18 @@ var draw_pos : Vector2
 @onready var bounds: Node2D = $Bounds
 
 
-
-var drawing_points : PackedVector2Array #:
-	#set(val) :
-		#drawing_points = val
-		#drawing.points = drawing_points
+var drawing_points : PackedVector2Array
 
 func _ready() -> void:
 	timer.wait_time = point_cooldown
 	draw_pos = drawing.position
 	base_glyph.draw_pos = draw_pos
+	
+	# Making all the lines :
+	
+	# Glyph is made of several parts
+	# we need to make all of them as children, then
+	# set everything there.
 	
 
 #func _input(event: InputEvent) -> void:

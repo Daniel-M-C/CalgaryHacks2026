@@ -14,6 +14,11 @@ config/name="CalgaryHacks2026"
 run/main_scene="uid://cwwwd2j612x3y"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.svg"
+<<<<<<<HEADconfig/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*uid://pthlg5ihddbw"
 
 [display]
 

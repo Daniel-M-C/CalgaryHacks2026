@@ -10,13 +10,14 @@ Could try to do a slice of which are being matched currently
 @onready var draw_pos : Vector2 =  Vector2.ZERO
 
 
+# NOTE :
+# ensure this matches up with the global list of glyph names
 @onready var glyphs : Array[GlyphArr] = [
 	preload("res://Drawing/Glyphs/feather.tres"),
 	preload("uid://c7n7ngoyu0vgk")
 ]
 
-# NOTE :
-# ensure this matches up with the above list
+
 enum GLYPH_NAME {
 	FEATHER,
 	VULTURE

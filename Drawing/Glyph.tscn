@@ -22,8 +22,8 @@ scale = Vector2(0.027121108, 0.45188951)
 texture = ExtResource("2_vebla")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Background" unique_id=1308850235]
-position = Vector2(12.901557, -2.2390406)
-scale = Vector2(0.1360104, 0.3053898)
+position = Vector2(13.212435, -1.8425409)
+scale = Vector2(0.14086786, 0.3115851)
 texture = ExtResource("2_vebla")
 
 [node name="BaseGlyph" parent="." unique_id=797166207 instance=ExtResource("1_ymqpo")]
@@ -49,6 +49,6 @@ text = "Done :)"
 position = Vector2(640, 100)
 
 [node name="Marker2D2" type="Marker2D" parent="Bounds" unique_id=1808643905]
-position = Vector2(960, 500)
+position = Vector2(980, 520)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
