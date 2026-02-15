@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://c7ec3nc5xew34"]
+
+[ext_resource type="Script" uid="uid://b6x0ndhty6h1i" path="res://Drawing/drawing_tablet.gd" id="1_eiwvq"]
+[ext_resource type="PackedScene" uid="uid://cvo141dnsobt6" path="res://Drawing/glyph.tscn" id="1_ymqpo"]
+[ext_resource type="Texture2D" uid="uid://c5h2o8spn6ijx" path="res://icon.svg" id="2_vebla"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ij2bk"]
+size = Vector2(50, 50)
+
+[node name="DrawingTablet" type="Node2D" unique_id=1178390468]
+script = ExtResource("1_eiwvq")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1732114929]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(553, 327)
+scale = Vector2(19.3, 10.718882)
+texture = SubResource("PlaceholderTexture2D_ij2bk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1936483164]
+position = Vector2(-0.077721655, 1.3113022e-06)
+scale = Vector2(0.027121108, 0.45188951)
+texture = ExtResource("2_vebla")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background" unique_id=1308850235]
+position = Vector2(12.901557, -2.2390406)
+scale = Vector2(0.1360104, 0.3053898)
+texture = ExtResource("2_vebla")
+
+[node name="BaseGlyph" parent="." unique_id=797166207 instance=ExtResource("1_ymqpo")]
+position = Vector2(120, 100)
+
+[node name="Drawing" type="Line2D" parent="." unique_id=760082188]
+position = Vector2(600, 100)
+
+[node name="Timer" type="Timer" parent="." unique_id=74474726]
+one_shot = true
+autostart = true
+
+[node name="Button" type="Button" parent="." unique_id=1881140096]
+offset_left = 946.0
+offset_top = 550.0
+offset_right = 1009.0
+offset_bottom = 581.0
+text = "Done :)"
+
+[node name="Bounds" type="Node2D" parent="." unique_id=706300837]
+
+[node name="Marker2D" type="Marker2D" parent="Bounds" unique_id=1869783827]
+position = Vector2(640, 100)
+
+[node name="Marker2D2" type="Marker2D" parent="Bounds" unique_id=1808643905]
+position = Vector2(960, 500)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
