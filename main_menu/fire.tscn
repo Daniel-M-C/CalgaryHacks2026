@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://elfw26gd2u78"]
+
+[ext_resource type="Script" uid="uid://c6gws1b8qxwan" path="res://main_menu/fire.gd" id="1_76kf1"]
+[ext_resource type="Texture2D" uid="uid://df8rhtljnrgjs" path="res://main_menu/Group 4 - 2.png" id="1_pr28r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76kf1"]
+atlas = ExtResource("1_pr28r")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4gvu"]
+atlas = ExtResource("1_pr28r")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlaej"]
+atlas = ExtResource("1_pr28r")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjpmm"]
+atlas = ExtResource("1_pr28r")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvjk4"]
+atlas = ExtResource("1_pr28r")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8j1i"]
+atlas = ExtResource("1_pr28r")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4sdp"]
+atlas = ExtResource("1_pr28r")
+region = Rect2(192, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34gs8"]
+atlas = ExtResource("1_pr28r")
+region = Rect2(224, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qa450"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76kf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4gvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlaej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjpmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvjk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8j1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4sdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34gs8")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 10.0
+}]
+
+[node name="fire" type="Node2D" unique_id=1473176334]
+script = ExtResource("1_76kf1")
+
+[node name="fire_animation" type="AnimatedSprite2D" parent="." unique_id=1744210169]
+texture_filter = 1
+position = Vector2(297.25, 246.0625)
+scale = Vector2(1.4218758, 1.2942709)
+sprite_frames = SubResource("SpriteFrames_qa450")
+animation = &"fire"
+autoplay = "fire"
+frame_progress = 0.04406384

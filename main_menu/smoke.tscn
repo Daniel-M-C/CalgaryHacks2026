@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://xwuxm4mpox80"]
+
+[ext_resource type="Texture2D" uid="uid://b7g81j2qp7nol" path="res://main_menu/Smoke Dark - 2.png" id="1_ptqff"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85xhq"]
+atlas = ExtResource("1_ptqff")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0i0h"]
+atlas = ExtResource("1_ptqff")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnlqj"]
+atlas = ExtResource("1_ptqff")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcc10"]
+atlas = ExtResource("1_ptqff")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtmal"]
+atlas = ExtResource("1_ptqff")
+region = Rect2(256, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6mpv"]
+atlas = ExtResource("1_ptqff")
+region = Rect2(320, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jua7c"]
+atlas = ExtResource("1_ptqff")
+region = Rect2(384, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqj81"]
+atlas = ExtResource("1_ptqff")
+region = Rect2(448, 0, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dwbq5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85xhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0i0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnlqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcc10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtmal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6mpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jua7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqj81")
+}],
+"loop": true,
+"name": &"smoke",
+"speed": 5.0
+}]
+
+[node name="smoke" type="Node2D" unique_id=1923626189]
+
+[node name="smoke_animation" type="AnimatedSprite2D" parent="." unique_id=582643345]
+texture_filter = 1
+position = Vector2(360, 227)
+sprite_frames = SubResource("SpriteFrames_dwbq5")
+animation = &"smoke"
+autoplay = "smoke"
+frame_progress = 0.26856434

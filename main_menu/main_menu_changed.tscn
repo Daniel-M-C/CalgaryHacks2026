@@ -1,0 +1,262 @@
+[gd_scene format=3 uid="uid://7yomxoo7ply7"]
+
+[ext_resource type="Script" uid="uid://dxit0hi62ilcu" path="res://main_menu/main_menu_changed.gd" id="1_y1r8h"]
+[ext_resource type="PackedScene" uid="uid://elfw26gd2u78" path="res://main_menu/fire.tscn" id="2_5bk8s"]
+[ext_resource type="Texture2D" uid="uid://cts0ucxdpse0c" path="res://main_menu/sky.PNG" id="2_2130a"]
+[ext_resource type="Texture2D" uid="uid://bx8f4rvafqkgc" path="res://main_menu/river.PNG" id="3_0ajwf"]
+[ext_resource type="PackedScene" uid="uid://xwuxm4mpox80" path="res://main_menu/smoke.tscn" id="3_tmn0u"]
+[ext_resource type="Shader" uid="uid://du86futpbigr7" path="res://main_menu/scroll.gdshader" id="4_cgivf"]
+[ext_resource type="FontFile" uid="uid://dxr0li25cacjm" path="res://main_menu/Dalek.ttf" id="4_tmn0u"]
+[ext_resource type="Texture2D" uid="uid://ycfu53n8qtri" path="res://main_menu/3.png" id="5_14cyr"]
+[ext_resource type="PackedScene" uid="uid://rspnucyy8v36" path="res://main_menu/big_fire.tscn" id="5_u1lr8"]
+[ext_resource type="Texture2D" uid="uid://bohe5eloiuqgi" path="res://main_menu/4.png" id="6_u7p3n"]
+[ext_resource type="Texture2D" uid="uid://dst15k4bpesp8" path="res://main_menu/main menu bg removed.png" id="7_shgrd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1waij"]
+render_priority = 0
+shader = ExtResource("4_cgivf")
+
+[sub_resource type="Theme" id="Theme_vcmik"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_na26b"]
+texture = ExtResource("7_shgrd")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3a7t"]
+bg_color = Color(0.6876212, 0.5967865, 0.22222081, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa53l"]
+bg_color = Color(0.32974428, 0.28364763, 0.08400311, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3shxk"]
+bg_color = Color(0.42374662, 0.36442462, 0.11751249, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oa53l"]
+
+[node name="main_menu" type="Control" unique_id=1157476522]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y1r8h")
+
+[node name="sky" type="TextureRect" parent="." unique_id=1023722900]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 527.0
+texture = ExtResource("2_2130a")
+
+[node name="river" type="TextureRect" parent="." unique_id=317869590]
+layout_mode = 0
+offset_top = 532.0
+offset_right = 1148.0
+offset_bottom = 643.0
+texture = ExtResource("3_0ajwf")
+
+[node name="clouds" type="TextureRect" parent="." unique_id=851212622]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_1waij")
+layout_mode = 0
+offset_left = -5.0
+offset_top = 2.0
+offset_right = 1149.0
+offset_bottom = 597.0
+texture = ExtResource("5_14cyr")
+
+[node name="shadow" type="TextureRect" parent="." unique_id=1356397642]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 315.0
+offset_right = 889.0
+offset_bottom = 639.0
+texture = ExtResource("6_u7p3n")
+
+[node name="Builidings" type="Panel" parent="." unique_id=2061498978]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -59.0
+offset_top = -27.0
+offset_right = -15.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vcmik")
+theme_override_styles/panel = SubResource("StyleBoxTexture_na26b")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=928372656]
+color = Color(0.86036915, 0.8603692, 0.8603692, 1)
+
+[node name="smoke1" parent="." unique_id=1923626189 instance=ExtResource("3_tmn0u")]
+position = Vector2(-54, 159)
+
+[node name="smoke2" parent="." unique_id=654477538 instance=ExtResource("3_tmn0u")]
+position = Vector2(712, 51)
+
+[node name="smoke3" parent="." unique_id=1974444678 instance=ExtResource("3_tmn0u")]
+position = Vector2(133, 92)
+
+[node name="smoke4" parent="." unique_id=829887851 instance=ExtResource("3_tmn0u")]
+position = Vector2(-9, -44)
+
+[node name="smoke5" parent="." unique_id=1566702535 instance=ExtResource("3_tmn0u")]
+position = Vector2(-77, -215)
+scale = Vector2(1.9077493, 1.4840195)
+
+[node name="smoke6" parent="." unique_id=2109548842 instance=ExtResource("3_tmn0u")]
+position = Vector2(-478.99997, -198)
+scale = Vector2(1.9077493, 1.4840195)
+
+[node name="smoke7" parent="." unique_id=1950337627 instance=ExtResource("3_tmn0u")]
+position = Vector2(74, 60)
+scale = Vector2(1.9077493, 1.4840195)
+
+[node name="smoke8" parent="." unique_id=639346533 instance=ExtResource("3_tmn0u")]
+position = Vector2(252, 61)
+scale = Vector2(1.9077493, 1.4840195)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1362609090]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23900001
+anchor_top = 0.73600006
+anchor_right = 0.23900001
+anchor_bottom = 0.73600006
+offset_left = -240.328
+offset_top = -45.92804
+offset_right = 43.671997
+offset_bottom = 120.07196
+grow_vertical = 2
+theme_override_constants/separation = 9
+
+[node name="Button1" type="Button" parent="VBoxContainer" unique_id=1240795544]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.043039, 0.04303924, 0.043039076, 1)
+theme_override_fonts/font = ExtResource("4_tmn0u")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_d3a7t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa53l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3shxk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oa53l")
+text = "Start game"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=779319793]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.043039, 0.04303924, 0.043039076, 1)
+theme_override_fonts/font = ExtResource("4_tmn0u")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_d3a7t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa53l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3shxk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oa53l")
+text = "exit"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=500010976]
+visible = false
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.043039, 0.04303924, 0.043039076, 1)
+theme_override_fonts/font = ExtResource("4_tmn0u")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_d3a7t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa53l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3shxk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oa53l")
+text = "options"
+
+[node name="big_fire1" parent="." unique_id=580124504 instance=ExtResource("5_u1lr8")]
+position = Vector2(426.00003, 229)
+scale = Vector2(1.0043803, 1.0099202)
+
+[node name="big_fire2" parent="." unique_id=1473176334 instance=ExtResource("5_u1lr8")]
+position = Vector2(648, 227)
+scale = Vector2(1.0043803, 1.0099202)
+
+[node name="big_fire4" parent="." unique_id=1559539721 instance=ExtResource("5_u1lr8")]
+position = Vector2(537, 24.999994)
+scale = Vector2(1.0087796, 1.019939)
+
+[node name="big_fire3" parent="." unique_id=827716607 instance=ExtResource("5_u1lr8")]
+position = Vector2(329, -68)
+scale = Vector2(1.0043803, 1.0099202)
+
+[node name="big_fire5" parent="." unique_id=785578861 instance=ExtResource("5_u1lr8")]
+position = Vector2(708.99994, -107.00001)
+scale = Vector2(1.00878, 1.0199391)
+
+[node name="fire1" parent="." unique_id=2056559398 instance=ExtResource("2_5bk8s")]
+z_index = 2
+position = Vector2(692, 49)
+
+[node name="fire2" parent="." unique_id=1738813073 instance=ExtResource("2_5bk8s")]
+z_index = 2
+position = Vector2(195, 121)
+
+[node name="fire3" parent="." unique_id=1263738047 instance=ExtResource("2_5bk8s")]
+z_index = 2
+position = Vector2(54, -9)
+
+[node name="fire4" parent="." unique_id=646155162 instance=ExtResource("2_5bk8s")]
+z_index = 2
+position = Vector2(-110, -13)
+
+[node name="fire6" parent="." unique_id=1668350762 instance=ExtResource("2_5bk8s")]
+z_index = 2
+position = Vector2(417, 55)
+
+[node name="Label" type="Label" parent="." unique_id=78813426]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21200001
+anchor_top = 0.73800004
+anchor_right = 0.21200001
+anchor_bottom = 0.73800004
+offset_left = 131.77599
+offset_top = -424.22403
+offset_right = 759.776
+offset_bottom = -304.22403
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.20392157)
+theme_override_constants/shadow_offset_x = 10
+theme_override_fonts/font = ExtResource("4_tmn0u")
+theme_override_font_sizes/font_size = 80
+text = "Fahrenheit 39-BC"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button1" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_options_pressed"]

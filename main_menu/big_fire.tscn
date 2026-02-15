@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://rspnucyy8v36"]
+
+[ext_resource type="Script" uid="uid://c6gws1b8qxwan" path="res://main_menu/fire.gd" id="1_i3u7i"]
+[ext_resource type="Texture2D" uid="uid://df8rhtljnrgjs" path="res://main_menu/Group 4 - 2.png" id="2_4gdvk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76kf1"]
+atlas = ExtResource("2_4gdvk")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4gvu"]
+atlas = ExtResource("2_4gdvk")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlaej"]
+atlas = ExtResource("2_4gdvk")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjpmm"]
+atlas = ExtResource("2_4gdvk")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvjk4"]
+atlas = ExtResource("2_4gdvk")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8j1i"]
+atlas = ExtResource("2_4gdvk")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4sdp"]
+atlas = ExtResource("2_4gdvk")
+region = Rect2(192, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34gs8"]
+atlas = ExtResource("2_4gdvk")
+region = Rect2(224, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qa450"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76kf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4gvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlaej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjpmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvjk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8j1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4sdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34gs8")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 10.0
+}]
+
+[node name="big_fire" type="Node2D" unique_id=1473176334]
+script = ExtResource("1_i3u7i")
+
+[node name="fire animation" type="AnimatedSprite2D" parent="." unique_id=1744210169]
+texture_filter = 1
+position = Vector2(297.25, 246.0625)
+scale = Vector2(2.8608828, 2.4011753)
+sprite_frames = SubResource("SpriteFrames_qa450")
+animation = &"fire"
+autoplay = "fire"
+frame_progress = 0.6469506
