@@ -21,11 +21,11 @@ Could try to do a slice of which are being matched currently
 ]
 
 
-@export var curr_glyph : Globals.GLYPH_NAME = 0
+@export var curr_glyph : Globals.GLYPH_NAME = Globals.GLYPH_NAME.EYE
 
 ## Has to be lower than the max number of parts for the curr_glyph
 ## just do it right, I don't want to remember
-@export var curr_parts : Array[int] = []
+@export var curr_part : int = 0
 
 var parts : Array[Line2D] = []
 
@@ -45,16 +45,19 @@ func _ready() :
 	
 	# we're just defaulting to everything, tho it can be changed later
 	if parts == [] :
-		set_parts([0,1,2,3,4,5,6,7,8,9,10])
+		set_parts()#([0,1,2,3,4,5,6,7,8,9,10])
 		pass
 	
-func set_parts(new_parts : Array[int]) :
+func set_parts() : #new_parts : Array[int]) :
 	"""
+	Uses curr_part to select which to draw.
 	Has to be lower than the max number of parts for the curr_glyph
 	just do it right, I don't want to make this work properly.
 	Over max will be ignored
 	
-	We only draw and evaluate on active parts.
+	
+	Points are added to true_glyph just for convenience. They are
+	re added in evaluate to do it on all points
 	"""
 	
 	# delete old parts
@@ -68,29 +71,30 @@ func set_parts(new_parts : Array[int]) :
 	
 	# Making all the lines :
 	
+	# Current thing will only have one 
+	
 	# Glyph is made of several parts
 	# we need to make all of them as children, then
 	# set everything there.
-	for i in new_parts : #glyphs[curr_glyph].parts :
-		
-		# don't want to over index
-		if i < len(glyphs[curr_glyph].parts) :
-			# to here
-			var new_line : Line2D = Line2D.new()
-			var new_line_2 : Line2D = Line2D.new()
-			# don't want to index -1
-			# tho it actually may work fine, idk.                    - 1 to have overlap
-			for point in range(glyphs[curr_glyph].parts[max(0, i-1)] - 1, glyphs[curr_glyph].parts[i]) :
-				new_line.add_point(glyphs[curr_glyph].arr[point])
-				add_child(new_line)
-				
-				# to true_glyph
-				new_line_2.add_point(glyphs[curr_glyph].arr[point])
-			parts.append(new_line)
-			true_glyph.add_child(new_line_2)
+	#for i in new_parts : #glyphs[curr_glyph].parts :
 	
+	# don't want to over index
+	#if i < len(glyphs[curr_glyph].parts) :
+	# to here
+	var new_line : Line2D = Line2D.new()
+	var new_line_2 : Line2D = Line2D.new()
+
+	for point in glyphs[curr_glyph].arrs[curr_part] : #range(glyphs[curr_glyph].parts[max(0, i-1)] - 1, glyphs[curr_glyph].parts[i]) :
+		new_line.add_point(point)#glyphs[curr_glyph].arr[point])
+		add_child(new_line)
+		
+		# to true_glyph
+		new_line_2.add_point(point)#glyphs[curr_glyph].arr[point])
+	parts.append(new_line)
+	true_glyph.add_child(new_line_2)
+
 	# we then set which is active when told through set_part
-	curr_parts = new_parts
+	#curr_parts = new_parts
 	pass
 	
 
@@ -106,6 +110,21 @@ func evaluate(other : PackedVector2Array, slice: Array = []) -> float:
 	
 	of how close the drawing is to glyph.
 	"""
+	# Adding all points to true_glyph
+	var new_line : Line2D = Line2D.new()
+	# don't want to index -1
+	# tho it actually may work fine, idk.                    - 1 to have overlap
+	for part in glyphs[curr_glyph].arrs :
+		for point in part : 
+			new_line.add_point(point)
+	true_glyph.add_child(new_line)
+		
+	
+	# end adding
+	
+	
+	
+	
 	var total_dist : int = 0
 	var n_points : int = 0
 	
@@ -149,7 +168,7 @@ func change_book(new_book : BookPiece2D) :
 	# change curr_line and piece
 	curr_glyph = new_book.colour.glyph
 	# TODO this may have to change
-	curr_parts = [new_book.colour.piece_num]
+	curr_part = new_book.colour.piece_num
 	
 	# chnage back so we can re select it if we want to.
 	if curr_book :
@@ -158,5 +177,5 @@ func change_book(new_book : BookPiece2D) :
 	
 	points = []
 	# TODO set to actual things
-	set_parts([0,1,2,3,4,5,6,7,8,9,10])
+	set_parts()#([0,1,2,3,4,5,6,7,8,9,10])
 	pass

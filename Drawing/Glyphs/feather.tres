@@ -6,6 +6,7 @@
 resource_local_to_scene = true
 script = ExtResource("1_saivv")
 arr = PackedVector2Array(247, 420, 246.99998, 341.5917, 246.99998, 285.39334, 246.99998, 228.36856, 246.99998, 181.26114, 247, 119, 247, 50, 232, 15, 207, -10, 205, 33, 192, 117, 164, 183, 147, 226, 133, 256, 130, 298, 156, 318, 197, 340, 245, 364)
+arrs = Array[PackedVector2Array]([PackedVector2Array(247, 420, 246.99998, 341.5917, 246.99998, 285.39334, 246.99998, 228.36856), PackedVector2Array(246.99998, 181.26114, 247, 119, 247, 50, 232, 15, 207, -10, 205, 33, 192, 117), PackedVector2Array(164, 183, 147, 226, 133, 256, 130, 298, 156, 318, 197, 340, 245, 364)])
 difficulty = 11.0
 parts = Array[int]([0, 6, 12, 18])
 metadata/_custom_type_script = "uid://d24ebsxkfj8qr"

@@ -11,7 +11,8 @@ enum Types {
 
 ## Which part of the glyph.
 ## Ignored for restorations (completed books)
-@export var piece_num := 3
+## Range [0,2]
+@export var piece_num := 2
 @export var glyph : Globals.GLYPH_NAME = 0
 
 @export var is_restoration := false

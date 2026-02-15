@@ -92,5 +92,6 @@ func make_books(books : Array[BookTypes], restorations : Array[BookTypes]) :
 		new_book.starting_pos.y = randf_range(book_bounds_r.get_child(0).global_position.y, 
 											  book_bounds_r.get_child(1).global_position.y)
 		new_book.position = new_book.starting_pos
+		new_book.rotation_degrees = randf_range(-180, 180)
 	pass
 	
