@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://st50kpanrahm"]
+
+[ext_resource type="PackedScene" uid="uid://reqynm2fcvpr" path="res://assets/3D/Rubble/Rubble 1.gltf" id="1_hnjrv"]
+
+[node name="Pillar Chunk 1" unique_id=1904932001 instance=ExtResource("1_hnjrv")]

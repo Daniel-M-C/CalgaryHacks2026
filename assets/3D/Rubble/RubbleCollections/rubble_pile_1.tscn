@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bsbwlqpd5okfg"]
+
+[ext_resource type="PackedScene" uid="uid://st50kpanrahm" path="res://assets/3D/Rubble/RubbleItems/pillar_chunk_1.tscn" id="1_nlrru"]
+[ext_resource type="PackedScene" uid="uid://ci3drnyn56bgl" path="res://assets/3D/Book/book.tscn" id="2_33uyd"]
+[ext_resource type="PackedScene" uid="uid://drom0ajngj7ko" path="res://assets/3D/Rubble/RubbleItems/wood_shard.tscn" id="3_3l0j3"]
+
+[node name="RubblePile1" type="Node3D" unique_id=1178057208]
+
+[node name="Pillar Chunk 1" parent="." unique_id=1904932001 instance=ExtResource("1_nlrru")]
+transform = Transform3D(1, 0, 0, 0, 0.597933, -0.8015461, 0, 0.8015461, 0.597933, 0, -0.16894618, -0.37021065)
+
+[node name="Book" parent="." unique_id=720773308 instance=ExtResource("2_33uyd")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.45537347, 0.07311994, -0.2527278)
+tint = Color(0.28085, 0.41, 0.1517, 1)
+
+[node name="Wood Shard" parent="." unique_id=448080765 instance=ExtResource("3_3l0j3")]
+transform = Transform3D(0.9717759, 0.042187504, -0.23210326, -0.09622475, 0.9691965, -0.22671326, 0.21538924, 0.24264854, 0.9459013, 0, -0.10271731, 0.00033262372)
+
+[node name="Book2" parent="." unique_id=1016531736 instance=ExtResource("2_33uyd")]
+transform = Transform3D(-2.2513033e-08, -0.5150381, 0.8571674, 1.0000001, -4.371139e-08, 0, 3.7467977e-08, 0.8571673, 0.51503813, -0.24038893, 0.086274564, -0.3514995)
+tint = Color(0.29616994, 0.16379999, 0.42, 1)
