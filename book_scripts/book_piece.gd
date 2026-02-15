@@ -32,6 +32,9 @@ func _unhandled_input(event):
 
 func _process(_delta):
 	
+	if in_cart:
+		global_position = Vector3(body_ref.global_position.x, global_position.y, body_ref.global_position.z)
+	
 	# drag and drop for ruins
 	if dragable:
 		if Input.is_action_just_pressed("click") && InventorySystem.is_dragging == null:
@@ -47,9 +50,10 @@ func _process(_delta):
 			InventorySystem.is_dragging = null
 			dragable = false
 			if is_inside_dropable:
+				in_cart = true
 				tween.tween_property(self, "global_position",body_ref.global_position+Vector3(0,0.5+(InventorySystem.in_cart*0.5),0),0.2)
 				InventorySystem.put_in_cart(self)
-				in_cart = true
+				
 				print("Going to are ref")
 			else: 
 				print("Going back")

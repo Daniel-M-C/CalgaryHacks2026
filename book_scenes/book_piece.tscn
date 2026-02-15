@@ -6,6 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_t3qse"]
 
 [node name="bookPiece" type="Node3D" unique_id=1447081182]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 script = ExtResource("1_t3qse")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=2087548564]

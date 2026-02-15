@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b4f4ifwb6e3c" path="res://character_mouvement/block.tscn" id="1_eahml"]
 [ext_resource type="PackedScene" uid="uid://duefxk7w1h6b7" path="res://character_mouvement/character_mouvement.tscn" id="2_2x0oi"]
+[ext_resource type="PackedScene" uid="uid://deymjgle1lnlq" path="res://book_scenes/book_piece.tscn" id="3_064gc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_b08ps"]
 size = Vector3(10, 0.5, 10)
@@ -38,3 +39,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.785039, 1.2114518, 0.966330
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1043231605]
 transform = Transform3D(0.7523453, -0.6246248, 0.20933329, 0.19150615, 0.51141447, 0.8377235, -0.63031894, -0.5901687, 0.50437975, 0, 5.374, 0)
 shadow_enabled = true
+
+[node name="bookPiece" parent="." unique_id=1447081182 instance=ExtResource("3_064gc")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.3308578, 0.442, 3.2676442)
