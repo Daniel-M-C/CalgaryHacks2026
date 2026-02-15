@@ -89,10 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -3)
 
 [node name="PlayerChar" parent="SubViewportContainer/SubViewport" unique_id=401240132 instance=ExtResource("4_itwbr")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-
-[node name="Area3D" parent="SubViewportContainer/SubViewport/PlayerChar/test_character" parent_id_path=PackedInt32Array(401240132, 1182882928) index="2" unique_id=263875532]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1.2595772, 0)
 
 [node name="bookPiece" parent="SubViewportContainer/SubViewport" unique_id=1447081182 instance=ExtResource("5_pjjum")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, -5)

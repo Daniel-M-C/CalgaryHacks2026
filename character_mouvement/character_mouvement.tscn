@@ -240,6 +240,7 @@ height = 1.5
 [sub_resource type="BoxShape3D" id="BoxShape3D_krgw5"]
 
 [node name="character_mouvement" type="Node3D" unique_id=401240132]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="test_character" type="CharacterBody3D" parent="." unique_id=1182882928]
 script = ExtResource("1_bilrw")
