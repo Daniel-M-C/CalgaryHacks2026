@@ -15,8 +15,8 @@ background_color = Color(1, 1, 1, 1)
 ambient_light_color = Color(0.81, 0.72373503, 0.23490001, 1)
 ambient_light_energy = 10.0
 fog_enabled = true
-fog_light_color = Color(0.63244253, 0.23946568, 0.27221385, 1)
-fog_density = 0.1
+fog_light_color = Color(0.63, 0.3465, 0.37012506, 1)
+fog_density = 0.08
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pegxi"]
 albedo_texture = ExtResource("8_oa8li")
@@ -31,6 +31,10 @@ size = Vector2(50, 50)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=911997773]
 transform = Transform3D(-0.49826676, 0, 0.86702377, 0, 1, 0, -0.86702377, 0, -0.49826676, 3.7206993, 1.8460927, -3.4446871)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=55258468]
+transform = Transform3D(1, 0, 0, 0, 0.25881904, 0.96592575, 0, -0.96592575, 0.25881904, 0, 0, 0)
+light_color = Color(0.98, 0.39200005, 0, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=58764876]
 environment = SubResource("Environment_qe8dp")
