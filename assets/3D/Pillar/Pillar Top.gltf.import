@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bdqfnpd0eqh3n"
-path="res://.godot/imported/Pillar Base.gltf-b8ee76cf9a5dcc3a5387fed9f00ded09.scn"
+uid="uid://bdtupcqa78jx0"
+path="res://.godot/imported/Pillar Top.gltf-e07b9993be0700907304b61b6fba373d.scn"
 
 [deps]
 
-source_file="res://assets/3D/Pillar/Pillar Base.gltf"
-dest_files=["res://.godot/imported/Pillar Base.gltf-b8ee76cf9a5dcc3a5387fed9f00ded09.scn"]
+source_file="res://assets/3D/Pillar/Pillar Top.gltf"
+dest_files=["res://.godot/imported/Pillar Top.gltf-e07b9993be0700907304b61b6fba373d.scn"]
 
 [params]
 
