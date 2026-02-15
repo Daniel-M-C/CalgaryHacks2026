@@ -34,7 +34,7 @@ func _unhandled_input(event):
 				var worldspace = get_world_3d().direct_space_state
 				world_mouse_pos = worldspace.intersect_ray(params)
 
-func _process(delta):
+func _process(_delta):
 	
 	# drag and drop for ruins
 	if dragable:
@@ -78,7 +78,7 @@ func setup():
 
 # check if mouse is on book
 func _on_area_3d_mouse_entered():
-	if InventorySystem.is_dragging == null && !in_cart && InventorySystem.in_cart <8:
+	if InventorySystem.is_dragging == null && !in_cart && InventorySystem.in_cart <InventorySystem.cart_limit:
 		dragable = true
 		scale = Vector3(1.05,1.05,1.05)
 	pass 

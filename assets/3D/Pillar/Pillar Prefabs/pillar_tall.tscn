@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cgs5h8lkgmah7"]
+
+[ext_resource type="PackedScene" uid="uid://b3n5iaimsijcv" path="res://assets/3D/Pillar/Pillar Parts/pillar_base.tscn" id="1_35kun"]
+[ext_resource type="PackedScene" uid="uid://dtojxq04xlhyt" path="res://assets/3D/Pillar/Pillar Parts/pillar_middle.tscn" id="2_boxdk"]
+[ext_resource type="PackedScene" uid="uid://b0v2jmvkph4ey" path="res://assets/3D/Pillar/Pillar Parts/pillar_top.tscn" id="3_a20ts"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_35kun"]
+
+[node name="Pillar Tall" type="Node3D" unique_id=2037632091]
+
+[node name="Pillar Base" parent="." unique_id=1890987077 instance=ExtResource("1_35kun")]
+
+[node name="Pillar Middle" parent="." unique_id=1699587092 instance=ExtResource("2_boxdk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="Pillar Middle2" parent="." unique_id=2146353705 instance=ExtResource("2_boxdk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Pillar Top" parent="." unique_id=1971508700 instance=ExtResource("3_a20ts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1794136189]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1111051907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_35kun")

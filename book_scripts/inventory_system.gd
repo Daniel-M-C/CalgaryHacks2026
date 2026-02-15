@@ -7,9 +7,15 @@ var book_pieces : Array[BookTypes]
 var books_completed : Array[BookTypes]
 
 # limit for ruin collection
+<<<<<<< HEAD
 var cart_limit = 3
 var in_cart = 0
 var in_cart_list: Array[BookPiece]
+=======
+var cart_limit := 3
+var in_cart := 0
+var in_cart_list: Array
+>>>>>>> main
 
 var is_dragging:BookPiece
 var is_dragging_2d:BookPiece2D
@@ -29,9 +35,11 @@ func put_in_cart(book_piece:BookPiece):
 		pass
 	pass
 	
+	# call this when laeving the ruins
 func empty_cart():
 	for i in range(in_cart_list.size()):
 		print("Index:", i, "Value:", in_cart_list[i])
+<<<<<<< HEAD
 		
 		# was 
 		# book_pieces.append(in_cart_list[i])
@@ -44,6 +52,9 @@ func empty_cart():
 		# using the BookType for interoperability between 2d and 3d
 		book_pieces.append(in_cart_list[i].colour)
 		in_cart_list[i].queue_free()
+=======
+		book_pieces.append(in_cart_list[i])
+>>>>>>> main
 		in_cart_list.pop_at(i)
 	# play pickup sound
 	pass
