@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cwwwd2j612x3y"]
+
+[ext_resource type="PackedScene" uid="uid://b4f4ifwb6e3c" path="res://character_mouvement/block.tscn" id="1_eahml"]
+[ext_resource type="PackedScene" uid="uid://duefxk7w1h6b7" path="res://character_mouvement/character_mouvement.tscn" id="2_2x0oi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b08ps"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nwiph"]
+size = Vector3(10, 0.5, 10)
+
+[node name="Level" type="Node3D" unique_id=767094025]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=459677652]
+transform = Transform3D(0.99949145, 0.024770333, 0.020081399, -0.031260468, 0.63682824, 0.7703718, 0.0062939827, -0.7706078, 0.63727856, 0.19848692, 2.531859, 4.4481163)
+fov = 112.16267
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=94165130]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1292433958]
+transform = Transform3D(0.99999994, 0.00020051414, -0.00020637689, -0.00020059796, 0.9999999, -0.00035086638, 0.0002062954, 0.00035091428, 0.9999999, 0, 0, 0)
+mesh = SubResource("BoxMesh_b08ps")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1740868277]
+shape = SubResource("BoxShape3D_nwiph")
+
+[node name="blocks" type="Node3D" parent="." unique_id=1919533238]
+
+[node name="block 1" parent="blocks" unique_id=1046553200 instance=ExtResource("1_eahml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2114978, 0.74303454, 1.2034509)
+
+[node name="block 2" parent="blocks" unique_id=908923889 instance=ExtResource("1_eahml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0)
+
+[node name="character_mouvement" parent="." unique_id=401240132 instance=ExtResource("2_2x0oi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.785039, 1.2114518, 0.96633005)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1043231605]
+transform = Transform3D(0.7523453, -0.6246248, 0.20933329, 0.19150615, 0.51141447, 0.8377235, -0.63031894, -0.5901687, 0.50437975, 0, 5.374, 0)
+shadow_enabled = true
