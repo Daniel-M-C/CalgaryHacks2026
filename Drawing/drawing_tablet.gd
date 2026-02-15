@@ -23,12 +23,6 @@ func _ready() -> void:
 	draw_pos = drawing.position
 	base_glyph.draw_pos = draw_pos
 	
-	# Making all the lines :
-	
-	# Glyph is made of several parts
-	# we need to make all of them as children, then
-	# set everything there.
-	
 
 #func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void :
@@ -53,8 +47,7 @@ func _process(delta: float) -> void :
 			# for some reson drawing.points immutable??? this works tho.
 			drawing.points = drawing_points
 			timer.start()
-			pass
-	
+			base_glyph.hide_hint()
 	
 	pass
 

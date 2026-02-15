@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cqogxcy4r1vk1"]
+
+[ext_resource type="PackedScene" uid="uid://dbiyhyuk2tr2w" path="res://assets/3D/Table/Table.gltf" id="1_7la1q"]
+
+[node name="DrawingTable" type="Node3D" unique_id=1601868349]
+
+[node name="blockbench_export" parent="." unique_id=1181807856 instance=ExtResource("1_7la1q")]
