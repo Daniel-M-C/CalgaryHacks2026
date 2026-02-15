@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://8k2t8n78y7n"]
+
+[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_d3a7t"]
+[ext_resource type="FontFile" uid="uid://dxr0li25cacjm" path="res://main_menu/Dalek.ttf" id="1_oa53l"]
+[ext_resource type="Shader" path="res://main_menu/scroll.gdshader" id="2_ia84y"]
+[ext_resource type="Texture2D" uid="uid://cts0ucxdpse0c" path="res://main_menu/sky.PNG" id="3_6at21"]
+[ext_resource type="Texture2D" uid="uid://bx8f4rvafqkgc" path="res://main_menu/river.PNG" id="4_og6xe"]
+[ext_resource type="Texture2D" uid="uid://ycfu53n8qtri" path="res://main_menu/3.png" id="5_mvfl2"]
+[ext_resource type="Texture2D" uid="uid://bohe5eloiuqgi" path="res://main_menu/4.png" id="6_qvn4f"]
+[ext_resource type="Texture2D" uid="uid://dst15k4bpesp8" path="res://main_menu/main menu bg removed.png" id="7_g1omr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ia84y"]
+render_priority = 0
+shader = ExtResource("2_ia84y")
+
+[sub_resource type="Theme" id="Theme_bws42"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n70vs"]
+texture = ExtResource("7_g1omr")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3a7t"]
+bg_color = Color(0.6876212, 0.5967865, 0.22222081, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa53l"]
+bg_color = Color(0.32974428, 0.28364763, 0.08400311, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3shxk"]
+bg_color = Color(0.42374662, 0.36442462, 0.11751249, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oa53l"]
+
+[node name="main_menu" type="Control" unique_id=1157476522]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d3a7t")
+
+[node name="Container" type="Control" parent="." unique_id=731361944]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sky" type="TextureRect" parent="Container" unique_id=2090977610]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.9999999
+offset_top = -1.9999999
+offset_right = 535.07056
+offset_bottom = 541.29156
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.54287314, 0.35758108)
+texture = ExtResource("3_6at21")
+
+[node name="river" type="TextureRect" parent="Container" unique_id=721590442]
+texture_filter = 1
+layout_mode = 0
+offset_left = -4.0
+offset_top = 270.0
+offset_right = 639.0
+offset_bottom = 358.0
+texture = ExtResource("4_og6xe")
+
+[node name="clouds" type="TextureRect" parent="Container" unique_id=69801309]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ia84y")
+layout_mode = 0
+offset_left = -3.0
+offset_top = 2.0
+offset_right = 637.0
+offset_bottom = 341.0
+texture = ExtResource("5_mvfl2")
+
+[node name="shadow" type="TextureRect" parent="Container" unique_id=483294796]
+texture_filter = 1
+layout_mode = 0
+offset_left = -12.0
+offset_top = 36.000004
+offset_right = 564.0
+offset_bottom = 360.0
+scale = Vector2(1.3083807, 0.9884154)
+texture = ExtResource("6_qvn4f")
+
+[node name="Builidings" type="Panel" parent="Container" unique_id=691353611]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -12.0
+offset_right = -8.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bws42")
+theme_override_styles/panel = SubResource("StyleBoxTexture_n70vs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container" unique_id=1362609090]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23900001
+anchor_top = 0.73600006
+anchor_right = 0.23900001
+anchor_bottom = 0.73600006
+offset_left = -121.96001
+offset_top = -31.960022
+offset_right = 7.0399933
+offset_bottom = 49.039978
+theme_override_constants/separation = 9
+
+[node name="Button1" type="Button" parent="Container/VBoxContainer" unique_id=1240795544]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.043039, 0.04303924, 0.043039076, 1)
+theme_override_fonts/font = ExtResource("1_oa53l")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_d3a7t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa53l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3shxk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oa53l")
+text = "Start game"
+
+[node name="Button3" type="Button" parent="Container/VBoxContainer" unique_id=779319793]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.043039, 0.04303924, 0.043039076, 1)
+theme_override_fonts/font = ExtResource("1_oa53l")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_d3a7t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa53l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3shxk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oa53l")
+text = "exit"
+
+[node name="Button2" type="Button" parent="Container/VBoxContainer" unique_id=500010976]
+visible = false
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.043039, 0.04303924, 0.043039076, 1)
+theme_override_fonts/font = ExtResource("1_oa53l")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_d3a7t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa53l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3shxk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oa53l")
+text = "options"
+
+[node name="Label" type="Label" parent="Container" unique_id=1907252203]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21200001
+anchor_top = 0.73800004
+anchor_right = 0.21200001
+anchor_bottom = 0.73800004
+offset_left = 26.319992
+offset_top = -225.68002
+offset_right = 509.32
+offset_bottom = -165.68002
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.20392157)
+theme_override_constants/shadow_offset_x = 10
+theme_override_fonts/font = ExtResource("1_oa53l")
+theme_override_font_sizes/font_size = 40
+text = "Fahrenheit 39-BC"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Container/VBoxContainer/Button1" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/Button2" to="." method="_on_options_pressed"]
