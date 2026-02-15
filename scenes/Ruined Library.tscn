@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://bl3w3xwgq6xkx" path="res://scenes/camera_rig.gd" id="1_27t2a"]
 [ext_resource type="Script" uid="uid://csefgapit55sa" path="res://scenes/world_environment.gd" id="1_itwbr"]
 [ext_resource type="Script" uid="uid://bwh2ypt8lh8h" path="res://scenes/camera_3d.gd" id="1_p3me4"]
-[ext_resource type="Script" uid="uid://bn4tbtvt8qwss" path="res://scenes/playerplaceholder.gd" id="1_sxbaw"]
-[ext_resource type="Texture2D" uid="uid://c5h2o8spn6ijx" path="res://icon.svg" id="2_p3me4"]
+[ext_resource type="PackedScene" uid="uid://duefxk7w1h6b7" path="res://character_mouvement/character_mouvement.tscn" id="4_itwbr"]
 [ext_resource type="PackedScene" uid="uid://bsbwlqpd5okfg" path="res://assets/3D/Rubble/RubbleCollections/rubble_pile_1.tscn" id="4_osd1g"]
 [ext_resource type="PackedScene" uid="uid://ddwllufv11iaw" path="res://assets/3D/Pillar/Pillar Prefabs/pillar_full.tscn" id="6_kbwfx"]
 [ext_resource type="Texture2D" uid="uid://ul7abddrrdol" path="res://assets/2D/Environment/Tile.png" id="6_u051o"]
@@ -14,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://doyy4cauuv777" path="res://assets/3D/Pillar/Pillar Prefabs/pillar_tiny.tscn" id="10_lwcta"]
 [ext_resource type="PackedScene" uid="uid://sju33nknlu3" path="res://assets/3D/Ember Particle/ember_particles.tscn" id="12_4yoio"]
 [ext_resource type="Script" uid="uid://boginfvnytcur" path="res://scenes/embers.gd" id="12_23hig"]
+[ext_resource type="PackedScene" uid="uid://bjtgfppoh7qyy" path="res://assets/3D/Shelf/shelf.tscn" id="12_pjjum"]
 
 [sub_resource type="Environment" id="Environment_u051o"]
 background_mode = 1
@@ -30,14 +30,6 @@ _data = {
 }
 point_count = 5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_osd1g"]
-albedo_texture = ExtResource("2_p3me4")
-uv1_offset = Vector3(0.5, 0.5, 0.5)
-uv1_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_27t2a"]
-material = SubResource("StandardMaterial3D_osd1g")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbwfx"]
 albedo_texture = ExtResource("6_u051o")
 uv1_offset = Vector3(0.5, 0, 0.5)
@@ -47,6 +39,8 @@ texture_filter = 0
 [sub_resource type="PlaneMesh" id="PlaneMesh_j1f08"]
 material = SubResource("StandardMaterial3D_kbwfx")
 size = Vector2(50, 50)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_itwbr"]
 
 [node name="RuinedLibrary" type="Node3D" unique_id=816043871]
 
@@ -87,24 +81,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Camera Rig/Path3D/PathFollow3D/Camera Pivot" unique_id=801804759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -3)
 script = ExtResource("1_p3me4")
+look_speed = null
 
 [node name="TargetDirection" type="Node3D" parent="SubViewportContainer/SubViewport/Camera Rig/Path3D/PathFollow3D/Camera Pivot" unique_id=818351117]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -3)
 
-[node name="Player" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=783389520]
+[node name="PlayerChar" parent="SubViewportContainer/SubViewport" unique_id=401240132 instance=ExtResource("4_itwbr")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-script = ExtResource("1_sxbaw")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Player" unique_id=1413195793]
-mesh = SubResource("BoxMesh_27t2a")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Environment" type="Node" parent="." unique_id=1465947663]
 
 [node name="Rubble" type="Node" parent="Environment" unique_id=1978895626]
 
 [node name="RubblePile1" parent="Environment/Rubble" unique_id=1178057208 instance=ExtResource("4_osd1g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2577463, 0, -1.2629447)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2577462, 0, -2.2629447)
+
+[node name="RubblePile2" parent="Environment/Rubble" unique_id=1698083846 instance=ExtResource("4_osd1g")]
+transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, -2.5, 0, 2.1339746)
+
+[node name="Book" parent="Environment/Rubble/RubblePile2" index="1" unique_id=720773308]
+tint = Color(0.59330225, 0.1737037, 0.44810164, 1)
+
+[node name="Book2" parent="Environment/Rubble/RubblePile2" index="3" unique_id=1016531736]
+tint = Color(0.107542254, 0.26522738, 0.30904454, 1)
 
 [node name="Pillars" type="Node" parent="Environment" unique_id=352357946]
 
@@ -112,7 +112,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2577463, 0, -1.2629447)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5)
 
 [node name="Pillar Tall" parent="Environment/Pillars" unique_id=2037632091 instance=ExtResource("8_xqr3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5)
 
 [node name="Pillar Full" parent="Environment/Pillars" unique_id=1202090024 instance=ExtResource("6_kbwfx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2)
@@ -138,23 +138,119 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
 [node name="Pillar Medium3" parent="Environment/Pillars" unique_id=88147743 instance=ExtResource("9_cg0a2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
-[node name="Pillar Tall3" parent="Environment/Pillars" unique_id=1368933723 instance=ExtResource("8_xqr3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
 [node name="Pillar Small3" parent="Environment/Pillars" unique_id=575272287 instance=ExtResource("7_j1f08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 7)
 
 [node name="Pillar Tiny2" parent="Environment/Pillars" unique_id=284553881 instance=ExtResource("10_lwcta")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 9)
+
+[node name="Pillar Tiny4" parent="Environment/Pillars" unique_id=2092846624 instance=ExtResource("10_lwcta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 9)
 
 [node name="Pillar Small4" parent="Environment/Pillars" unique_id=1774305007 instance=ExtResource("7_j1f08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7)
 
+[node name="Pillar Small5" parent="Environment/Pillars" unique_id=1563087800 instance=ExtResource("7_j1f08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 11)
+
+[node name="Pillar Tiny5" parent="Environment/Pillars" unique_id=160035313 instance=ExtResource("10_lwcta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 13)
+
+[node name="Pillar Tiny6" parent="Environment/Pillars" unique_id=37526050 instance=ExtResource("10_lwcta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 13)
+
+[node name="Pillar Small6" parent="Environment/Pillars" unique_id=140672193 instance=ExtResource("7_j1f08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 11)
+
+[node name="Pillar Small7" parent="Environment/Pillars" unique_id=30914128 instance=ExtResource("7_j1f08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 15)
+
+[node name="Pillar Tiny7" parent="Environment/Pillars" unique_id=2116715136 instance=ExtResource("10_lwcta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 17)
+
+[node name="Pillar Tiny8" parent="Environment/Pillars" unique_id=2070504990 instance=ExtResource("10_lwcta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 17)
+
+[node name="Pillar Small8" parent="Environment/Pillars" unique_id=1812754798 instance=ExtResource("7_j1f08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 15)
+
+[node name="Pillar Small9" parent="Environment/Pillars" unique_id=1726232631 instance=ExtResource("7_j1f08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 19)
+
+[node name="Pillar Tiny9" parent="Environment/Pillars" unique_id=1784744670 instance=ExtResource("10_lwcta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 21)
+
+[node name="Pillar Tiny10" parent="Environment/Pillars" unique_id=686322947 instance=ExtResource("10_lwcta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 21)
+
+[node name="Pillar Small10" parent="Environment/Pillars" unique_id=139033106 instance=ExtResource("7_j1f08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 19)
+
+[node name="Pillar Full3" parent="Environment/Pillars" unique_id=1348060310 instance=ExtResource("6_kbwfx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="Pillar Tall3" parent="Environment/Pillars" unique_id=1613838500 instance=ExtResource("8_xqr3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -5)
+
+[node name="Pillar Full4" parent="Environment/Pillars" unique_id=1233612510 instance=ExtResource("6_kbwfx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -5)
+
+[node name="Pillar Full5" parent="Environment/Pillars" unique_id=363400978 instance=ExtResource("6_kbwfx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="Pillar Medium4" parent="Environment/Pillars" unique_id=2028408939 instance=ExtResource("9_cg0a2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
+
+[node name="Pillar Tiny3" parent="Environment/Pillars" unique_id=1093109636 instance=ExtResource("10_lwcta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+
 [node name="Bookshelves" type="Node" parent="Environment" unique_id=221691427]
+
+[node name="Shelf" parent="Environment/Bookshelves" unique_id=1253763585 instance=ExtResource("12_pjjum")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
+
+[node name="Shelf3" parent="Environment/Bookshelves" unique_id=1428085382 instance=ExtResource("12_pjjum")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3, 0, -2)
+
+[node name="Shelf2" parent="Environment/Bookshelves" unique_id=297487440 instance=ExtResource("12_pjjum")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 0, -4.371139e-08)
 
 [node name="Room Surfaces" type="Node" parent="Environment" unique_id=191372544]
 
 [node name="Floor" type="MeshInstance3D" parent="Environment/Room Surfaces" unique_id=1106253892]
+mesh = SubResource("PlaneMesh_j1f08")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Room Surfaces/Floor" unique_id=1113739282]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Room Surfaces/Floor/StaticBody3D" unique_id=615612103]
+shape = SubResource("WorldBoundaryShape3D_itwbr")
+
+[node name="Node3D" type="Node3D" parent="Environment/Room Surfaces" unique_id=918904621]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Ceiling" type="MeshInstance3D" parent="Environment/Room Surfaces/Node3D" unique_id=2116748981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.6362808, 0)
+mesh = SubResource("PlaneMesh_j1f08")
+
+[node name="Node3D2" type="Node3D" parent="Environment/Room Surfaces" unique_id=1568167406]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wall" type="MeshInstance3D" parent="Environment/Room Surfaces/Node3D2" unique_id=1984197220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.336281, 0)
+mesh = SubResource("PlaneMesh_j1f08")
+
+[node name="Node3D3" type="Node3D" parent="Environment/Room Surfaces" unique_id=1898298499]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wall" type="MeshInstance3D" parent="Environment/Room Surfaces/Node3D3" unique_id=1675437676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.336281, 0)
+mesh = SubResource("PlaneMesh_j1f08")
+
+[node name="Node3D4" type="Node3D" parent="Environment/Room Surfaces" unique_id=2130578253]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -2)
+
+[node name="Wall" type="MeshInstance3D" parent="Environment/Room Surfaces/Node3D4" unique_id=2079239766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.336281, 0)
 mesh = SubResource("PlaneMesh_j1f08")
 
 [node name="Embers" type="Node" parent="Environment" unique_id=674865489]
@@ -163,6 +259,9 @@ script = ExtResource("12_23hig")
 [node name="Ember Particles" parent="Environment/Embers" unique_id=895438678 instance=ExtResource("12_4yoio")]
 visible = false
 
-[node name="Ember Particles2" parent="Environment/Embers" unique_id=1247389276 instance=ExtResource("12_4yoio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
-visible = false
+[node name="GPUParticles3D" parent="Environment/Embers/Ember Particles" index="0" unique_id=1368292374]
+amount = 200
+
+[editable path="SubViewportContainer/SubViewport/PlayerChar"]
+[editable path="Environment/Rubble/RubblePile2"]
+[editable path="Environment/Embers/Ember Particles"]

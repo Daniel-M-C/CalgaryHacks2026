@@ -233,9 +233,15 @@ animations = [{
 "speed": 5.0
 }]
 
+<<<<<<< HEAD
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t1x4m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t1x4m"]
+=======
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bilrw"]
+radius = 0.4
+height = 1.5
+>>>>>>> main
 
 [node name="character_mouvement" type="Node3D" unique_id=401240132]
 
@@ -247,8 +253,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03528118, 0.0035934448, 0.
 flip_h = true
 billboard = 1
 texture_filter = 0
+<<<<<<< HEAD
 sprite_frames = SubResource("SpriteFrames_ivdow")
 animation = &"right"
+=======
+sprite_frames = SubResource("SpriteFrames_2w0jb")
+animation = &"idle"
+>>>>>>> main
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="test_character" unique_id=24992452]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.015423059, -0.035572767, -0.0014166832)

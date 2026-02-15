@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var player: Node3D = %Player
+@onready var player: Node3D = %PlayerChar
 @onready var camera_pivot: Node3D = $"Path3D/PathFollow3D/Camera Pivot"
 @onready var path: Path3D = $Path3D
 
