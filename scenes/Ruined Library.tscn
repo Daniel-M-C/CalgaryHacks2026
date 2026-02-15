@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bwh2ypt8lh8h" path="res://scenes/camera_3d.gd" id="1_p3me4"]
 [ext_resource type="PackedScene" uid="uid://duefxk7w1h6b7" path="res://character_mouvement/character_mouvement.tscn" id="4_itwbr"]
 [ext_resource type="PackedScene" uid="uid://bsbwlqpd5okfg" path="res://assets/3D/Rubble/RubbleCollections/rubble_pile_1.tscn" id="4_osd1g"]
+[ext_resource type="PackedScene" uid="uid://deymjgle1lnlq" path="res://book_scenes/book_piece.tscn" id="5_pjjum"]
 [ext_resource type="PackedScene" uid="uid://ddwllufv11iaw" path="res://assets/3D/Pillar/Pillar Prefabs/pillar_full.tscn" id="6_kbwfx"]
 [ext_resource type="Texture2D" uid="uid://ul7abddrrdol" path="res://assets/2D/Environment/Tile.png" id="6_u051o"]
 [ext_resource type="PackedScene" uid="uid://cbnkxbg4t3hvg" path="res://assets/3D/Pillar/Pillar Prefabs/pillar_small.tscn" id="7_j1f08"]
@@ -89,6 +90,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -3)
 [node name="PlayerChar" parent="SubViewportContainer/SubViewport" unique_id=401240132 instance=ExtResource("4_itwbr")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Area3D" parent="SubViewportContainer/SubViewport/PlayerChar/test_character" parent_id_path=PackedInt32Array(401240132, 1182882928) index="2" unique_id=263875532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="bookPiece" parent="SubViewportContainer/SubViewport" unique_id=1447081182 instance=ExtResource("5_pjjum")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, -5)
 
 [node name="Environment" type="Node" parent="." unique_id=1465947663]
 
@@ -263,5 +270,6 @@ visible = false
 amount = 200
 
 [editable path="SubViewportContainer/SubViewport/PlayerChar"]
+[editable path="SubViewportContainer/SubViewport/bookPiece"]
 [editable path="Environment/Rubble/RubblePile2"]
 [editable path="Environment/Embers/Ember Particles"]

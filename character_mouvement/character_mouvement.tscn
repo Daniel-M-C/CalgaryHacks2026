@@ -89,6 +89,8 @@ animations = [{
 radius = 0.4
 height = 1.5
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_krgw5"]
+
 [node name="character_mouvement" type="Node3D" unique_id=401240132]
 
 [node name="test_character" type="CharacterBody3D" parent="." unique_id=1182882928]
@@ -105,3 +107,8 @@ animation = &"idle"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="test_character" unique_id=24992452]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015423059, -0.035572767, -0.0014166832)
 shape = SubResource("CapsuleShape3D_bilrw")
+
+[node name="Area3D" type="Area3D" parent="test_character" unique_id=263875532 groups=["dropable"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test_character/Area3D" unique_id=1197102207]
+shape = SubResource("BoxShape3D_krgw5")
