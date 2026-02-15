@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cmagb2mv76kdb"]
+
+[ext_resource type="Texture2D" uid="uid://3ah027qy3kg8" path="res://assets/2D/library_npc_sprites.png" id="1_ideak"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4setq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ideak"]
+atlas = ExtResource("1_ideak")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxcha"]
+atlas = ExtResource("1_ideak")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mjvdl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ideak")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxcha")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[node name="NPC" type="Node3D" unique_id=1152195446]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2041237971]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=722414051]
+shape = SubResource("CapsuleShape3D_4setq")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=895547907]
+billboard = 1
+texture_filter = 4
+sprite_frames = SubResource("SpriteFrames_mjvdl")
+animation = &"happy"
+
+[node name="Label3D" type="Label3D" parent="." unique_id=115819142]
+text = "Blue Book
+-"

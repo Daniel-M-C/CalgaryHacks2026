@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://c8x6eaf31u5an"]
+
+[ext_resource type="PackedScene" uid="uid://deymjgle1lnlq" path="res://book_scenes/book_piece.tscn" id="1_h7w0x"]
+[ext_resource type="Script" uid="uid://blok3pvxenm7y" path="res://book_resources/BookTypes.gd" id="2_3sa3v"]
+[ext_resource type="PackedScene" uid="uid://bm5gpkk7ptsf6" path="res://book_scenes/inventory_system.tscn" id="3_gfrcf"]
+[ext_resource type="PackedScene" uid="uid://dv3xgekaehj3a" path="res://book_scenes/cart.tscn" id="4_3sa3v"]
+[ext_resource type="PackedScene" uid="uid://dffuk3k86bn1g" path="res://scenes/player.tscn" id="5_gfrcf"]
+
+[sub_resource type="Resource" id="Resource_dfv7a"]
+script = ExtResource("2_3sa3v")
+currentType = 1
+piece_num = 2
+metadata/_custom_type_script = "uid://blok3pvxenm7y"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gfrcf"]
+size = Vector3(11.222168, 1, 16.911072)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3sa3v"]
+
+[sub_resource type="Resource" id="Resource_3sa3v"]
+script = ExtResource("2_3sa3v")
+piece_num = 2
+metadata/_custom_type_script = "uid://blok3pvxenm7y"
+
+[sub_resource type="Resource" id="Resource_gfrcf"]
+script = ExtResource("2_3sa3v")
+currentType = 2
+metadata/_custom_type_script = "uid://blok3pvxenm7y"
+
+[sub_resource type="Resource" id="Resource_46bo0"]
+script = ExtResource("2_3sa3v")
+currentType = 3
+piece_num = 1
+metadata/_custom_type_script = "uid://blok3pvxenm7y"
+
+[node name="AndreasMainScene" type="Node3D" unique_id=1007990462]
+
+[node name="bookPiece" parent="." unique_id=1447081182 instance=ExtResource("1_h7w0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1597004, 0, 0)
+colour = SubResource("Resource_dfv7a")
+
+[node name="inventorySystem" parent="." unique_id=1474714104 instance=ExtResource("3_gfrcf")]
+
+[node name="cart" parent="." unique_id=1262350385 instance=ExtResource("4_3sa3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.838614, 0, -3.3864768)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=3195781]
+transform = Transform3D(-4.371139e-08, -0.52991927, 0.8480481, 0, 0.8480481, 0.52991927, -1, 2.3163507e-08, -3.706936e-08, 7.327518, 1.4073994, -1.7034112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1866682894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5373535, -2.0230417, -2.4048767)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=8370594]
+shape = SubResource("BoxShape3D_gfrcf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D" unique_id=39901154]
+transform = Transform3D(11.054694, 0, 0, 0, 1, 0, 0, 0, 16.555737, 0.01390934, -0.027970552, 0.027246952)
+mesh = SubResource("BoxMesh_3sa3v")
+
+[node name="bookPiece2" parent="." unique_id=973023270 instance=ExtResource("1_h7w0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13683033, -0.88304174, -7.825099)
+colour = SubResource("Resource_3sa3v")
+
+[node name="bookPiece3" parent="." unique_id=1940379326 instance=ExtResource("1_h7w0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0675755, -0.88304174, 4.900572)
+colour = SubResource("Resource_gfrcf")
+
+[node name="bookPiece4" parent="." unique_id=1767395171 instance=ExtResource("1_h7w0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6922932, -0.88304174, -4.571334)
+colour = SubResource("Resource_46bo0")
+
+[node name="bookPiece5" parent="." unique_id=1681144914 instance=ExtResource("1_h7w0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30068398, -0.88304174, 3.1063843)
+
+[node name="bookPiece6" parent="." unique_id=535358120 instance=ExtResource("1_h7w0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44969177, -0.88304174, -1.3459293)
+
+[node name="bookPiece7" parent="." unique_id=1335278977 instance=ExtResource("1_h7w0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0439987, -0.88304174, 0.70905614)
+
+[node name="bookPiece8" parent="." unique_id=1519174975 instance=ExtResource("1_h7w0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4725246, -0.88304174, -6.5654974)
+
+[node name="bookPiece9" parent="." unique_id=1918695146 instance=ExtResource("1_h7w0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2703352, -0.88304174, -1.6328318)
+
+[node name="character_mouvement" parent="." unique_id=401240132 instance=ExtResource("5_gfrcf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9519827, -1.3666352, -2.871593)

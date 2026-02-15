@@ -1,9 +1,7 @@
 extends CharacterBody3D
 
-
-@onready var animated_sprite_3d: AnimatedSprite3D = $Sprite3D
+@onready var animated_sprite_3d: AnimatedSprite3D = $AnimatedSprite3D
 const SPEED = 5.0
-
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,9 +24,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func set_animation():
-	if velocity.x > 0.1: animated_sprite_3d.flip_h = true
-	elif velocity.x < -0.1: animated_sprite_3d.flip_h = false
+
+	if velocity.x > 0.1: animated_sprite_3d.flip_h = false
+	elif velocity.x < -0.1: animated_sprite_3d.flip_h = true
 	
 	if velocity: animated_sprite_3d.play("left")
 	else: animated_sprite_3d.play("idle")
-	

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bjtgfppoh7qyy"]
+
+[ext_resource type="PackedScene" uid="uid://coi8m8bujuyie" path="res://assets/3D/Shelf/Bookshelf.gltf" id="1_la50s"]
+
+[node name="Shelf" unique_id=1253763585 instance=ExtResource("1_la50s")]

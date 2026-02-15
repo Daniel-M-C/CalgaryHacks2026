@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://deymjgle1lnlq"]
+
+[ext_resource type="Script" uid="uid://uuxh5qsdg6ge" path="res://book_scripts/book_piece.gd" id="1_t3qse"]
+[ext_resource type="Texture2D" uid="uid://coa1k4mws4530" path="res://assets/2D/paper.png" id="2_t3qse"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t3qse"]
+
+[node name="bookPiece" type="Node3D" unique_id=1447081182]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+script = ExtResource("1_t3qse")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2087548564]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1656292517]
+shape = SubResource("BoxShape3D_t3qse")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=515028998]
+pixel_size = 0.05
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_t3qse")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]

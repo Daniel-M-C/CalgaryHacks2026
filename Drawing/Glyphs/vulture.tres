@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GlyphArr" format=3 uid="uid://c7n7ngoyu0vgk"]
+
+[ext_resource type="Script" uid="uid://d24ebsxkfj8qr" path="res://Drawing/Glyphs/glyph_arr.gd" id="1_eydqy"]
+
+[resource]
+script = ExtResource("1_eydqy")
+arr = PackedVector2Array(247, 420)
+metadata/_custom_type_script = "uid://d24ebsxkfj8qr"

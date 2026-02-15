@@ -1,0 +1,34 @@
+class_name GlyphArr
+extends Resource
+
+"""
+How to add and modify glyphs :
+	
+1. make a new glyph resource
+2. Set the arr : PackedVector2Array to the right shape
+	(can paint one with a line2d, then copy paste it from the .tscn to the .res)
+3. Set the parts array (most will be in three parts). See var parts
+4. Add the preload to glyph.gd glyphs and the globals enum
+
+done. Yay ^_^
+
+TODO change it to be 3 different arrays.
+"""
+
+## We need to have one array for each possible segment
+## We can make just one to begin with (since that makes drawing easier)
+## Then separate them through parts.
+## Then Glyph can make a Line2D for each part
+@export var arr : PackedVector2Array 
+
+## Used to determine score of drawings.
+## score = mean_closest_dist_from_points/difficulty
+@export var difficulty : float = 100
+
+
+## Each glyph is split into several parts
+## starts at 0, goest to [1],
+## then from [1] to [2] and so forth
+## will be inclusive of the beginning to keep overlap
+## and have the lines touch 
+@export var parts : Array[int] = []

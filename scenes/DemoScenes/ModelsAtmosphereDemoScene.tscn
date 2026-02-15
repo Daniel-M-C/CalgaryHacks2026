@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://cmhurp5l43uyp"]
+
+[ext_resource type="PackedScene" uid="uid://b3n5iaimsijcv" path="res://assets/3D/Pillar/Pillar Parts/pillar_base.tscn" id="1_5sjhd"]
+[ext_resource type="PackedScene" uid="uid://dtojxq04xlhyt" path="res://assets/3D/Pillar/Pillar Parts/pillar_middle.tscn" id="2_227yg"]
+[ext_resource type="PackedScene" uid="uid://b0v2jmvkph4ey" path="res://assets/3D/Pillar/Pillar Parts/pillar_top.tscn" id="3_oa8li"]
+[ext_resource type="PackedScene" uid="uid://dlhh1iv6brs78" path="res://assets/3D/Table/table.tscn" id="4_5sjhd"]
+[ext_resource type="PackedScene" uid="uid://ci3drnyn56bgl" path="res://assets/3D/Book/book.tscn" id="5_qe8dp"]
+[ext_resource type="PackedScene" uid="uid://bjtgfppoh7qyy" path="res://assets/3D/Shelf/shelf.tscn" id="6_5sjhd"]
+[ext_resource type="PackedScene" uid="uid://bsbwlqpd5okfg" path="res://assets/3D/Rubble/RubbleCollections/rubble_pile_1.tscn" id="7_227yg"]
+[ext_resource type="Texture2D" uid="uid://ul7abddrrdol" path="res://assets/2D/Environment/Tile.png" id="8_oa8li"]
+[ext_resource type="PackedScene" uid="uid://sju33nknlu3" path="res://assets/3D/Ember Particle/ember_particles.tscn" id="9_pegxi"]
+
+[sub_resource type="Environment" id="Environment_qe8dp"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+ambient_light_color = Color(0.81, 0.72373503, 0.23490001, 1)
+ambient_light_energy = 10.0
+fog_enabled = true
+fog_light_color = Color(0.63, 0.3465, 0.37012506, 1)
+fog_density = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pegxi"]
+albedo_texture = ExtResource("8_oa8li")
+uv1_triplanar = true
+texture_filter = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mkdix"]
+material = SubResource("StandardMaterial3D_pegxi")
+size = Vector2(50, 50)
+
+[node name="Models Text Scene" type="Node3D" unique_id=225327813]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=399259623]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=2107115808]
+handle_input_locally = false
+size = Vector2i(640, 360)
+size_2d_override = Vector2i(320, 180)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Camera Rig" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=827884036]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Camera Rig" unique_id=911997773]
+transform = Transform3D(-0.49826673, 0, 0.8670238, 0, 1, 0, -0.8670238, 0, -0.49826673, 3.7206993, 1.8460927, -3.4446871)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=55258468]
+transform = Transform3D(1, 0, 0, 0, 0.25881907, 0.9659259, 0, -0.9659259, 0.25881907, 0, 0, 0)
+light_color = Color(0.98, 0.39200005, 0, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=58764876]
+environment = SubResource("Environment_qe8dp")
+
+[node name="Pillar" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=280007788]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Pillar Base" parent="SubViewportContainer/SubViewport/Pillar" unique_id=1890987077 instance=ExtResource("1_5sjhd")]
+
+[node name="Pillar Middle" parent="SubViewportContainer/SubViewport/Pillar" unique_id=1699587092 instance=ExtResource("2_227yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="Pillar Top" parent="SubViewportContainer/SubViewport/Pillar" unique_id=1971508700 instance=ExtResource("3_oa8li")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+
+[node name="Table" parent="SubViewportContainer/SubViewport" unique_id=574382764 instance=ExtResource("4_5sjhd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="Book" parent="SubViewportContainer/SubViewport" unique_id=406925877 instance=ExtResource("5_qe8dp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -2.5)
+tint = Color(0.37440425, 0.54872835, 0.94304395, 1)
+
+[node name="Green_Book" parent="SubViewportContainer/SubViewport" unique_id=720773308 instance=ExtResource("5_qe8dp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226, 1, -2.5)
+tint = Color(0.4909224, 0.64187783, 0.15888146, 1)
+
+[node name="Shelf" parent="SubViewportContainer/SubViewport" unique_id=1253763585 instance=ExtResource("6_5sjhd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="RubblePile1" parent="SubViewportContainer/SubViewport" unique_id=1178057208 instance=ExtResource("7_227yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3.3266954)
+
+[node name="Floor" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=253315300]
+mesh = SubResource("PlaneMesh_mkdix")
+
+[node name="Ember Particles" parent="SubViewportContainer/SubViewport" unique_id=895438678 instance=ExtResource("9_pegxi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6229334, 0)
+
+[node name="GPUParticles3D" parent="SubViewportContainer/SubViewport/Ember Particles" index="0" unique_id=1368292374]
+amount = 300
+
+[editable path="SubViewportContainer/SubViewport/Green_Book"]
+[editable path="SubViewportContainer/SubViewport/Ember Particles"]

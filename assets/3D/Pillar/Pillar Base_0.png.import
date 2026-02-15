@@ -2,14 +2,14 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btteutmthd22m"
+uid="uid://b7r3ibr8lvgjc"
 path.s3tc="res://.godot/imported/Pillar Base_0.png-39daa4c7f6971fa72c04a8b7f10cecbf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d957b3148ad9be769d8188203254b9d1"
+"md5": "078e77a0940ec51ef6b6788399422b20"
 }
 
 [deps]

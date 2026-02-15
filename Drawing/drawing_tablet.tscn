@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c7ec3nc5xew34"]
+
+[ext_resource type="Script" uid="uid://b6x0ndhty6h1i" path="res://Drawing/drawing_tablet.gd" id="1_eiwvq"]
+[ext_resource type="PackedScene" uid="uid://cvo141dnsobt6" path="res://Drawing/glyph.tscn" id="1_ymqpo"]
+[ext_resource type="Texture2D" uid="uid://c5h2o8spn6ijx" path="res://icon.svg" id="2_vebla"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ij2bk"]
+size = Vector2(50, 50)
+
+[node name="DrawingTablet" type="Node2D" unique_id=1178390468]
+script = ExtResource("1_eiwvq")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1732114929]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(553, 327)
+scale = Vector2(19.3, 10.718882)
+texture = SubResource("PlaceholderTexture2D_ij2bk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1936483164]
+position = Vector2(-0.077721655, 1.3113022e-06)
+scale = Vector2(0.027121108, 0.45188951)
+texture = ExtResource("2_vebla")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background" unique_id=1308850235]
+position = Vector2(13.212435, -1.8425409)
+scale = Vector2(0.14086786, 0.3115851)
+texture = ExtResource("2_vebla")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=116284189]
+position = Vector2(302.00006, 304)
+scale = Vector2(2.732465, 3.1950674)
+texture = ExtResource("2_vebla")
+
+[node name="BaseGlyph" parent="." unique_id=797166207 instance=ExtResource("1_ymqpo")]
+position = Vector2(130, 100)
+points = PackedVector2Array(159, 126, 109, 126, 65, 126, 28, 126, 27, 175, 28, 215, 32, 220, 40, 222, 47, 215, 49, 196, 49, 181, 25, 181, 75, 180, 75, 203, 73, 218, 65, 224, 56, 222, 48, 214, 49, 180, 105, 180, 105, 200, 101, 220, 93, 224, 81, 221, 77, 213, 76, 180, 141, 180, 142, 200, 141, 217, 129, 224, 115, 220, 105, 207, 105, 180, 148, 180, 181, 180, 180, 197, 180, 213, 169, 222, 155, 222, 144, 211, 142, 181, 222, 180, 234, 207, 234, 226, 217, 231, 204, 228, 193, 223, 181, 212, 181, 181, 226, 181, 242, 217, 256, 228, 273, 229, 283, 223, 288, 216, 292, 205, 292, 195, 280, 181, 267, 172, 254, 165, 244, 171, 225, 180, 256, 164, 288, 185, 312, 192, 336, 187, 341, 169, 340, 148, 336, 137, 319, 131, 297, 127, 273, 126, 256, 126, 256, 163, 256, 127, 245, 126, 215, 126, 159, 126)
+closed = false
+curr_glyph = 3
+
+[node name="Drawing" type="Line2D" parent="." unique_id=760082188]
+position = Vector2(639, 100)
+
+[node name="Timer" type="Timer" parent="." unique_id=74474726]
+one_shot = true
+autostart = true
+
+[node name="Button" type="Button" parent="." unique_id=1881140096]
+offset_left = 946.0
+offset_top = 550.0
+offset_right = 1009.0
+offset_bottom = 581.0
+text = "Done :)"
+
+[node name="Bounds" type="Node2D" parent="." unique_id=706300837]
+
+[node name="Marker2D" type="Marker2D" parent="Bounds" unique_id=1869783827]
+position = Vector2(640, 100)
+
+[node name="Marker2D2" type="Marker2D" parent="Bounds" unique_id=1808643905]
+position = Vector2(980, 520)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
