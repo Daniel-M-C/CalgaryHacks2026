@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cw7t8l6vlaiii"]
 
 [ext_resource type="Script" uid="uid://bl3w3xwgq6xkx" path="res://scenes/camera_rig.gd" id="1_27t2a"]
-[ext_resource type="Script" uid="uid://csefgapit55sa" path="res://scenes/world_environment.gd" id="1_itwbr"]
+[ext_resource type="Script" path="res://scenes/world_environment.gd" id="1_itwbr"]
 [ext_resource type="Script" uid="uid://bwh2ypt8lh8h" path="res://scenes/camera_3d.gd" id="1_p3me4"]
-[ext_resource type="PackedScene" uid="uid://duefxk7w1h6b7" path="res://character_mouvement/character_mouvement.tscn" id="4_itwbr"]
+[ext_resource type="PackedScene" uid="uid://dffuk3k86bn1g" path="res://scenes/player.tscn" id="4_itwbr"]
 [ext_resource type="PackedScene" uid="uid://bsbwlqpd5okfg" path="res://assets/3D/Rubble/RubbleCollections/rubble_pile_1.tscn" id="4_osd1g"]
 [ext_resource type="PackedScene" uid="uid://deymjgle1lnlq" path="res://book_scenes/book_piece.tscn" id="5_pjjum"]
 [ext_resource type="PackedScene" uid="uid://ddwllufv11iaw" path="res://assets/3D/Pillar/Pillar Prefabs/pillar_full.tscn" id="6_kbwfx"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dhnurl6cpgvj2" path="res://assets/3D/Pillar/Pillar Prefabs/pillar_medium.tscn" id="9_cg0a2"]
 [ext_resource type="PackedScene" uid="uid://doyy4cauuv777" path="res://assets/3D/Pillar/Pillar Prefabs/pillar_tiny.tscn" id="10_lwcta"]
 [ext_resource type="PackedScene" uid="uid://sju33nknlu3" path="res://assets/3D/Ember Particle/ember_particles.tscn" id="12_4yoio"]
-[ext_resource type="Script" uid="uid://boginfvnytcur" path="res://scenes/embers.gd" id="12_23hig"]
+[ext_resource type="Script" path="res://scenes/embers.gd" id="12_23hig"]
 [ext_resource type="PackedScene" uid="uid://bjtgfppoh7qyy" path="res://assets/3D/Shelf/shelf.tscn" id="12_pjjum"]
 
 [sub_resource type="Environment" id="Environment_u051o"]
