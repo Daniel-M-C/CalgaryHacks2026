@@ -1,9 +1,17 @@
 [gd_scene format=3 uid="uid://cw7t8l6vlaiii"]
 
+[ext_resource type="Script" uid="uid://bl3w3xwgq6xkx" path="res://scenes/camera_rig.gd" id="1_27t2a"]
 [ext_resource type="Script" uid="uid://bwh2ypt8lh8h" path="res://scenes/camera_3d.gd" id="1_p3me4"]
 [ext_resource type="Script" uid="uid://bn4tbtvt8qwss" path="res://scenes/playerplaceholder.gd" id="1_sxbaw"]
 [ext_resource type="Texture2D" uid="uid://c5h2o8spn6ijx" path="res://icon.svg" id="2_p3me4"]
 [ext_resource type="PackedScene" uid="uid://bsbwlqpd5okfg" path="res://assets/3D/Rubble/RubbleCollections/rubble_pile_1.tscn" id="4_osd1g"]
+
+[sub_resource type="Curve3D" id="Curve3D_osd1g"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 2, 5, 0, 0, 0, 0, 0, 0, 0, 2, 0, -1, 0, 0, 0, 0, 0, 2, 2, -2),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_osd1g"]
 albedo_texture = ExtResource("2_p3me4")
@@ -26,19 +34,33 @@ size_flags_vertical = 3
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1679698825]
+handle_input_locally = false
 size = Vector2i(640, 360)
 size_2d_override = Vector2i(640, 360)
 size_2d_override_stretch = true
+render_target_update_mode = 4
 
 [node name="Camera Rig" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=747758483]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
+script = ExtResource("1_27t2a")
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Camera Rig" unique_id=801804759]
+[node name="Path3D" type="Path3D" parent="SubViewportContainer/SubViewport/Camera Rig" unique_id=172522081]
+curve = SubResource("Curve3D_osd1g")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="SubViewportContainer/SubViewport/Camera Rig/Path3D" unique_id=1403801996]
+transform = Transform3D(0.9999996, 0, 0, 0, 1, 0, 0, 0, 0.9999996, 0, 2, 5)
+
+[node name="Camera Pivot" type="Node3D" parent="SubViewportContainer/SubViewport/Camera Rig/Path3D/PathFollow3D" unique_id=23208703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Camera Rig/Path3D/PathFollow3D/Camera Pivot" unique_id=801804759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -3)
 script = ExtResource("1_p3me4")
 
-[node name="TargetDirection" type="Node3D" parent="SubViewportContainer/SubViewport/Camera Rig" unique_id=818351117]
+[node name="TargetDirection" type="Node3D" parent="SubViewportContainer/SubViewport/Camera Rig/Path3D/PathFollow3D/Camera Pivot" unique_id=818351117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -3)
 
 [node name="Player" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=783389520]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("1_sxbaw")
 
