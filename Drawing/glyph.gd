@@ -41,6 +41,10 @@ func _ready() :
 	# have to wait a frame for the parent to set this
 	await get_tree().process_frame
 	true_glyph.position = draw_pos
+	# fix scaling since it's not at the right screen resolution anymore.
+	true_glyph.position.y -= position.y * get_parent().scale.y
+	true_glyph.position.x += position.x * get_parent().scale.x
+	draw_pos = true_glyph.global_position
 	pass
 	
 	# we're just defaulting to everything, tho it can be changed later

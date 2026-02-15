@@ -29,9 +29,17 @@ var drawing_points : PackedVector2Array
 
 func _ready() -> void:
 	timer.wait_time = point_cooldown
-	draw_pos = drawing.position
+	draw_pos = drawing.global_position
 	base_glyph.draw_pos = draw_pos
 	
+	# bad solution, but whatever
+	## done to fix resolution change
+	#await get_tree().process_frame
+	#await get_tree().process_frame
+	#base_glyph.draw_pos
+	#drawing.scale = scale
+	#drawing.position.y -= position.y
+	#drawing.position.x += position.x
 
 #func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void :
@@ -48,11 +56,14 @@ func _process(delta: float) -> void :
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and timer.is_stopped():
 		
 		#TODO limit range of darwing
-		var pos = get_local_mouse_position()
-		if pos.x > bounds.get_child(0).position.x and pos.x < bounds.get_child(1).position.x \
-		and pos.y > bounds.get_child(0).position.y and pos.y < bounds.get_child(1).position.y :
+		var pos = get_global_mouse_position()
+		print('pos =', pos)
+		if pos.x > bounds.get_child(0).global_position.x and pos.x < bounds.get_child(1).global_position.x \
+		and pos.y > bounds.get_child(0).global_position.y and pos.y < bounds.get_child(1).global_position.y :
 			
-			drawing_points.append(pos - draw_pos)
+			# also done to fix scaling
+			# bad magic numbers, whatever
+			drawing_points.append(pos - drawing.global_position)
 			# for some reson drawing.points immutable??? this works tho.
 			drawing.points = drawing_points
 			timer.start()

@@ -14,6 +14,7 @@ size = Vector2(278, 368)
 size = Vector2(284, 396)
 
 [node name="DrawingTablet" type="Node2D" unique_id=1178390468 groups=["dropable"]]
+scale = Vector2(0.55, 0.55)
 script = ExtResource("1_eiwvq")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1732114929]
@@ -40,7 +41,6 @@ texture = ExtResource("2_vebla")
 [node name="BaseGlyph" parent="." unique_id=1479630502 instance=ExtResource("1_ymqpo")]
 position = Vector2(177.87776, 100)
 points = PackedVector2Array(316, 215, 299, 192, 285, 175, 264, 159, 239, 144, 207, 134, 162, 132, 109, 146, 77, 156, 59, 164, 36, 175, 14, 198, 2, 218, 20, 193, 39, 212, 63, 219, 94, 232, 85.41829, 256.51917, 75.44057, 285.02698, 66, 312, 97, 232, 142, 238, 176, 239, 176.5359, 278.65735, 177, 313, 184, 237, 204, 225, 218, 202, 225, 181, 215, 155, 193, 136, 174, 136, 144, 140, 127, 162, 123, 183, 131, 203, 152, 223, 181, 239, 184, 241, 225, 240, 247, 235, 256, 269, 263, 307, 249, 234, 262, 230, 277, 219, 290, 209, 300, 197)
-closed = false
 
 [node name="Area2D" type="Area2D" parent="BaseGlyph" unique_id=270858345 groups=["dropable"]]
 
