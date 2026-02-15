@@ -9,4 +9,3 @@ func _ready() -> void:
     var coverChildren := cover.find_children("*", "MeshInstance3D", false, false)
     for mesh3d: MeshInstance3D in coverChildren:
         mesh3d.get_active_material(0).albedo_color = tint
-    pass
