@@ -323,11 +323,12 @@ animations = [{
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bilrw"]
 radius = 0.4
-height = 1.5
+height = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_krgw5"]
 
 [node name="character_mouvement" type="Node3D" unique_id=401240132]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="test_character" type="CharacterBody3D" parent="." unique_id=1182882928]
 script = ExtResource("1_bilrw")
@@ -355,7 +356,7 @@ shape = SubResource("BoxShape3D_t1x4m")
 animation = &"left"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="test_character" unique_id=24992452]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.015423059, -0.035572767, -0.0014166832)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.015423059, 0.0019272327, -0.0014166832)
 shape = SubResource("CapsuleShape3D_bilrw")
 
 [node name="Area3D" type="Area3D" parent="test_character" unique_id=263875532 groups=["dropable"]]
