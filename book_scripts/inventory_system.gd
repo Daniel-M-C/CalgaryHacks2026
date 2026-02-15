@@ -28,3 +28,31 @@ func empty_cart():
 		in_cart_list.pop_at(i)
 	# play pickup sound
 	pass
+
+
+
+### MUSIC
+const EGYPTIAN_RUINS_LOUD = preload("uid://88rq3wuice6x")
+const FIRE_AMBIANCE = preload("uid://bxrcwp0v7dp50")
+const RUINED = preload("uid://cw06is6uol1un")
+
+func _ready():
+	set_music(1)
+	pass
+
+func set_music(num:int):
+	if $Music != null && $Fire != null:
+		match num:
+			1:
+				$Music.set_stream(EGYPTIAN_RUINS_LOUD)
+				$Music.play()
+				pass
+			2:
+				$Music.set_stream(RUINED)
+				$Music.play()
+				$Fire.set_stream(FIRE_AMBIANCE)
+				$Fire.play()
+				pass
+			_:
+				pass
+	pass

@@ -4,6 +4,7 @@ class_name BookPiece
 # pick different book types for each instance
 # colour and page number in export variables
 @export var colour:BookTypes
+@onready var audio = $AudioStreamPlayer3D
 
 # variables for drag and drop
 var in_ruins = true
@@ -39,6 +40,7 @@ func _process(_delta):
 	# drag and drop for ruins
 	if dragable:
 		if Input.is_action_just_pressed("click") && InventorySystem.is_dragging == null:
+			audio.play()
 			initialPos = global_position
 			InventorySystem.is_dragging = self
 		if Input.is_action_pressed("click") && InventorySystem.is_dragging == self:
@@ -46,6 +48,7 @@ func _process(_delta):
 				global_position = world_mouse_pos["position"] + Vector3(0,0.5,0)
 		pass
 		if Input.is_action_just_released("click"):
+			audio.play()
 			var tween = get_tree().create_tween()
 			print(tween)
 			InventorySystem.is_dragging = null

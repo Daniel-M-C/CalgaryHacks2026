@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://uuxh5qsdg6ge" path="res://book_scripts/book_piece.gd" id="1_t3qse"]
 [ext_resource type="Texture2D" uid="uid://coa1k4mws4530" path="res://assets/2D/paper.png" id="2_t3qse"]
+[ext_resource type="AudioStream" uid="uid://xowu1cpyo7cj" path="res://music/Book Place 2.mp3" id="3_shix1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t3qse"]
 
@@ -19,6 +20,9 @@ pixel_size = 0.05
 billboard = 1
 texture_filter = 0
 texture = ExtResource("2_t3qse")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=969801477]
+stream = ExtResource("3_shix1")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]

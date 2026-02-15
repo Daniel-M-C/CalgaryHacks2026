@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxrcwp0v7dp50"
+path="res://.godot/imported/Fire Ambiance.mp3-fe3acc3e5fa38e7b313696606de67c41.mp3str"
+
+[deps]
+
+source_file="res://music/Fire Ambiance.mp3"
+dest_files=["res://.godot/imported/Fire Ambiance.mp3-fe3acc3e5fa38e7b313696606de67c41.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

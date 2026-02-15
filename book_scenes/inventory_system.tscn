@@ -4,3 +4,7 @@
 
 [node name="inventorySystem" type="Node" unique_id=1474714104]
 script = ExtResource("1_c8rho")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=642919960]
+
+[node name="Fire" type="AudioStreamPlayer" parent="." unique_id=191628743]
