@@ -33,7 +33,7 @@ func _unhandled_input(event):
 func _process(_delta):
 	
 	if in_cart:
-		global_position = Vector3(body_ref.global_position.x, global_position.y, body_ref.global_position.z)
+		global_position = Vector3(body_ref.global_position.x,global_position.y,body_ref.global_position.z)
 	
 	# drag and drop for ruins
 	if dragable:
