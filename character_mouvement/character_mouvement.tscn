@@ -100,7 +100,7 @@ flip_h = true
 billboard = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_2w0jb")
-animation = &"left"
+animation = &"idle"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="test_character" unique_id=24992452]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015423059, -0.035572767, -0.0014166832)
