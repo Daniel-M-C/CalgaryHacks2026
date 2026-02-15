@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://dffuk3k86bn1g"]
+=======
+[gd_scene format=3 uid="uid://dqt8od5y2vo2w"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://dbb54rxex5smo" path="res://character_mouvement/test_character.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dc1oppe0vb054" path="res://assets/2D/librarian_sprites.png" id="2_qhqgy"]

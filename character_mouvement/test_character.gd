@@ -24,9 +24,16 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func set_animation():
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 	if velocity.x > 0.1: animated_sprite_3d.flip_h = true
 	elif velocity.x < -0.1: animated_sprite_3d.flip_h = false
 	
 	if velocity: animated_sprite_3d.play("left")
 	else: animated_sprite_3d.play("idle")
+<<<<<<< Updated upstream
+=======
+	
+>>>>>>> Stashed changes
