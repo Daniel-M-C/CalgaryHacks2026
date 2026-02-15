@@ -12,13 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://bohe5eloiuqgi" path="res://main_menu/4.png" id="6_u7p3n"]
 [ext_resource type="Texture2D" uid="uid://dst15k4bpesp8" path="res://main_menu/main menu bg removed.png" id="7_shgrd"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1waij"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2130a"]
 render_priority = 0
 shader = ExtResource("4_cgivf")
 
-[sub_resource type="Theme" id="Theme_vcmik"]
+[sub_resource type="Theme" id="Theme_0ajwf"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_na26b"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cgivf"]
 texture = ExtResource("7_shgrd")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3a7t"]
@@ -64,81 +64,103 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y1r8h")
 
-[node name="sky" type="TextureRect" parent="." unique_id=1023722900]
-layout_mode = 0
-offset_right = 1154.0
-offset_bottom = 527.0
-texture = ExtResource("2_2130a")
+[node name="Container" type="Control" parent="." unique_id=1910682662]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="river" type="TextureRect" parent="." unique_id=317869590]
-layout_mode = 0
-offset_top = 532.0
-offset_right = 1148.0
-offset_bottom = 643.0
-texture = ExtResource("3_0ajwf")
-
-[node name="clouds" type="TextureRect" parent="." unique_id=851212622]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_1waij")
-layout_mode = 0
-offset_left = -5.0
-offset_top = 2.0
-offset_right = 1149.0
-offset_bottom = 597.0
-texture = ExtResource("5_14cyr")
-
-[node name="shadow" type="TextureRect" parent="." unique_id=1356397642]
-layout_mode = 0
-offset_left = 313.0
-offset_top = 315.0
-offset_right = 889.0
-offset_bottom = 639.0
-texture = ExtResource("6_u7p3n")
-
-[node name="Builidings" type="Panel" parent="." unique_id=2061498978]
+[node name="sky" type="TextureRect" parent="Container" unique_id=286358608]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -59.0
-offset_top = -27.0
-offset_right = -15.0
-offset_bottom = -4.0
+offset_left = -1.9999999
+offset_top = -1.9999999
+offset_right = 535.07056
+offset_bottom = 541.29156
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_vcmik")
-theme_override_styles/panel = SubResource("StyleBoxTexture_na26b")
+scale = Vector2(0.54287314, 0.35758108)
+texture = ExtResource("2_2130a")
+
+[node name="river" type="TextureRect" parent="Container" unique_id=1742603209]
+texture_filter = 1
+layout_mode = 0
+offset_left = -4.0
+offset_top = 270.0
+offset_right = 639.0
+offset_bottom = 358.0
+texture = ExtResource("3_0ajwf")
+
+[node name="clouds" type="TextureRect" parent="Container" unique_id=1586074440]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_2130a")
+layout_mode = 0
+offset_left = -3.0
+offset_top = 2.0
+offset_right = 637.0
+offset_bottom = 341.0
+texture = ExtResource("5_14cyr")
+
+[node name="shadow2" type="TextureRect" parent="Container" unique_id=1969453524]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 36.000015
+offset_right = 579.0
+offset_bottom = 360.0
+scale = Vector2(1.3083807, 0.9884154)
+texture = ExtResource("6_u7p3n")
+
+[node name="Builidings" type="Panel" parent="Container" unique_id=2013030243]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -12.0
+offset_right = -8.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0ajwf")
+theme_override_styles/panel = SubResource("StyleBoxTexture_cgivf")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=928372656]
 color = Color(0.86036915, 0.8603692, 0.8603692, 1)
 
 [node name="smoke1" parent="." unique_id=1923626189 instance=ExtResource("3_tmn0u")]
-position = Vector2(-54, 159)
+position = Vector2(-43, -101)
 
 [node name="smoke2" parent="." unique_id=654477538 instance=ExtResource("3_tmn0u")]
-position = Vector2(712, 51)
+position = Vector2(-7, -56)
 
 [node name="smoke3" parent="." unique_id=1974444678 instance=ExtResource("3_tmn0u")]
-position = Vector2(133, 92)
+position = Vector2(-231, -168)
 
 [node name="smoke4" parent="." unique_id=829887851 instance=ExtResource("3_tmn0u")]
-position = Vector2(-9, -44)
+position = Vector2(67, -128)
 
 [node name="smoke5" parent="." unique_id=1566702535 instance=ExtResource("3_tmn0u")]
-position = Vector2(-77, -215)
+position = Vector2(-126, -270)
 scale = Vector2(1.9077493, 1.4840195)
 
 [node name="smoke6" parent="." unique_id=2109548842 instance=ExtResource("3_tmn0u")]
-position = Vector2(-478.99997, -198)
+position = Vector2(-263, -283)
 scale = Vector2(1.9077493, 1.4840195)
 
 [node name="smoke7" parent="." unique_id=1950337627 instance=ExtResource("3_tmn0u")]
-position = Vector2(74, 60)
+position = Vector2(-227, -187)
 scale = Vector2(1.9077493, 1.4840195)
 
 [node name="smoke8" parent="." unique_id=639346533 instance=ExtResource("3_tmn0u")]
-position = Vector2(252, 61)
+position = Vector2(-455, -253)
 scale = Vector2(1.9077493, 1.4840195)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1362609090]
@@ -148,10 +170,10 @@ anchor_left = 0.23900001
 anchor_top = 0.73600006
 anchor_right = 0.23900001
 anchor_bottom = 0.73600006
-offset_left = -240.328
-offset_top = -45.92804
-offset_right = 43.671997
-offset_bottom = 120.07196
+offset_left = -121.96001
+offset_top = -31.960022
+offset_right = 7.0399933
+offset_bottom = 49.039978
 grow_vertical = 2
 theme_override_constants/separation = 9
 
@@ -161,7 +183,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.043039, 0.04303924, 0.043039076, 1)
 theme_override_fonts/font = ExtResource("4_tmn0u")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_d3a7t")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oa53l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3shxk")
@@ -174,7 +196,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.043039, 0.04303924, 0.043039076, 1)
 theme_override_fonts/font = ExtResource("4_tmn0u")
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_d3a7t")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oa53l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3shxk")
@@ -196,46 +218,50 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_oa53l")
 text = "options"
 
 [node name="big_fire1" parent="." unique_id=580124504 instance=ExtResource("5_u1lr8")]
-position = Vector2(426.00003, 229)
+position = Vector2(128.00003, -34.99997)
 scale = Vector2(1.0043803, 1.0099202)
 
 [node name="big_fire2" parent="." unique_id=1473176334 instance=ExtResource("5_u1lr8")]
-position = Vector2(648, 227)
+position = Vector2(79.000046, -185.99997)
 scale = Vector2(1.0043803, 1.0099202)
 
 [node name="big_fire4" parent="." unique_id=1559539721 instance=ExtResource("5_u1lr8")]
-position = Vector2(537, 24.999994)
+position = Vector2(224.99998, -136)
 scale = Vector2(1.0087796, 1.019939)
 
 [node name="big_fire3" parent="." unique_id=827716607 instance=ExtResource("5_u1lr8")]
-position = Vector2(329, -68)
+position = Vector2(234.99998, -33)
 scale = Vector2(1.0043803, 1.0099202)
 
 [node name="big_fire5" parent="." unique_id=785578861 instance=ExtResource("5_u1lr8")]
-position = Vector2(708.99994, -107.00001)
+position = Vector2(-91, -63.000004)
 scale = Vector2(1.00878, 1.0199391)
 
 [node name="fire1" parent="." unique_id=2056559398 instance=ExtResource("2_5bk8s")]
 z_index = 2
-position = Vector2(692, 49)
+position = Vector2(-166, -82)
+
+[node name="fire5" parent="." unique_id=1281559207 instance=ExtResource("2_5bk8s")]
+z_index = 2
+position = Vector2(289, -176)
 
 [node name="fire2" parent="." unique_id=1738813073 instance=ExtResource("2_5bk8s")]
 z_index = 2
-position = Vector2(195, 121)
+position = Vector2(112, -107)
 
 [node name="fire3" parent="." unique_id=1263738047 instance=ExtResource("2_5bk8s")]
 z_index = 2
-position = Vector2(54, -9)
+position = Vector2(2, -79)
 
 [node name="fire4" parent="." unique_id=646155162 instance=ExtResource("2_5bk8s")]
 z_index = 2
-position = Vector2(-110, -13)
+position = Vector2(-194, -144)
 
 [node name="fire6" parent="." unique_id=1668350762 instance=ExtResource("2_5bk8s")]
 z_index = 2
-position = Vector2(417, 55)
+position = Vector2(-117, -204)
 
-[node name="Label" type="Label" parent="." unique_id=78813426]
+[node name="Label2" type="Label" parent="." unique_id=664913490]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -243,16 +269,14 @@ anchor_left = 0.21200001
 anchor_top = 0.73800004
 anchor_right = 0.21200001
 anchor_bottom = 0.73800004
-offset_left = 131.77599
-offset_top = -424.22403
-offset_right = 759.776
-offset_bottom = -304.22403
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 26.319992
+offset_top = -225.68002
+offset_right = 509.32
+offset_bottom = -165.68002
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.20392157)
 theme_override_constants/shadow_offset_x = 10
 theme_override_fonts/font = ExtResource("4_tmn0u")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 40
 text = "Fahrenheit 39-BC"
 horizontal_alignment = 1
 vertical_alignment = 1

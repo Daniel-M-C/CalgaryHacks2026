@@ -70,7 +70,8 @@ animations = [{
 
 [node name="smoke_animation" type="AnimatedSprite2D" parent="." unique_id=582643345]
 texture_filter = 1
-position = Vector2(360, 227)
+position = Vector2(349.5, 248)
+scale = Vector2(0.671875, 0.671875)
 sprite_frames = SubResource("SpriteFrames_dwbq5")
 animation = &"smoke"
 autoplay = "smoke"

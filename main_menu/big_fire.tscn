@@ -72,8 +72,8 @@ script = ExtResource("1_i3u7i")
 
 [node name="fire animation" type="AnimatedSprite2D" parent="." unique_id=1744210169]
 texture_filter = 1
-position = Vector2(297.25, 246.0625)
-scale = Vector2(2.8608828, 2.4011753)
+position = Vector2(277.73795, 270.34534)
+scale = Vector2(1.6413779, 1.3893896)
 sprite_frames = SubResource("SpriteFrames_qa450")
 animation = &"fire"
 autoplay = "fire"

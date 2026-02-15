@@ -61,93 +61,115 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d3a7t")
 
-[node name="sky" type="TextureRect" parent="." unique_id=2090977610]
-layout_mode = 0
-offset_right = 1154.0
-offset_bottom = 527.0
-texture = ExtResource("3_6at21")
+[node name="Container" type="Control" parent="." unique_id=731361944]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="river" type="TextureRect" parent="." unique_id=721590442]
-layout_mode = 0
-offset_top = 532.0
-offset_right = 1148.0
-offset_bottom = 643.0
-texture = ExtResource("4_og6xe")
-
-[node name="clouds" type="TextureRect" parent="." unique_id=69801309]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_ia84y")
-layout_mode = 0
-offset_left = -5.0
-offset_top = 2.0
-offset_right = 1149.0
-offset_bottom = 597.0
-texture = ExtResource("5_mvfl2")
-
-[node name="shadow" type="TextureRect" parent="." unique_id=483294796]
-layout_mode = 0
-offset_left = 313.0
-offset_top = 315.0
-offset_right = 889.0
-offset_bottom = 639.0
-texture = ExtResource("6_qvn4f")
-
-[node name="Builidings" type="Panel" parent="." unique_id=691353611]
+[node name="sky" type="TextureRect" parent="Container" unique_id=2090977610]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -59.0
-offset_top = -27.0
-offset_right = -15.0
-offset_bottom = -4.0
+offset_left = -1.9999999
+offset_top = -1.9999999
+offset_right = 535.07056
+offset_bottom = 541.29156
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.54287314, 0.35758108)
+texture = ExtResource("3_6at21")
+
+[node name="river" type="TextureRect" parent="Container" unique_id=721590442]
+texture_filter = 1
+layout_mode = 0
+offset_left = -4.0
+offset_top = 270.0
+offset_right = 639.0
+offset_bottom = 358.0
+texture = ExtResource("4_og6xe")
+
+[node name="clouds" type="TextureRect" parent="Container" unique_id=69801309]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ia84y")
+layout_mode = 0
+offset_left = -3.0
+offset_top = 2.0
+offset_right = 637.0
+offset_bottom = 341.0
+texture = ExtResource("5_mvfl2")
+
+[node name="shadow" type="TextureRect" parent="Container" unique_id=483294796]
+texture_filter = 1
+layout_mode = 0
+offset_left = -12.0
+offset_top = 36.000004
+offset_right = 564.0
+offset_bottom = 360.0
+scale = Vector2(1.3083807, 0.9884154)
+texture = ExtResource("6_qvn4f")
+
+[node name="Builidings" type="Panel" parent="Container" unique_id=691353611]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -12.0
+offset_right = -8.0
+offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_bws42")
 theme_override_styles/panel = SubResource("StyleBoxTexture_n70vs")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1362609090]
+[node name="VBoxContainer" type="VBoxContainer" parent="Container" unique_id=1362609090]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.23900001
 anchor_top = 0.73600006
 anchor_right = 0.23900001
 anchor_bottom = 0.73600006
-offset_left = -240.328
-offset_top = -45.92804
-offset_right = 43.671997
-offset_bottom = 120.07196
-grow_vertical = 2
+offset_left = -121.96001
+offset_top = -31.960022
+offset_right = 7.0399933
+offset_bottom = 49.039978
 theme_override_constants/separation = 9
 
-[node name="Button1" type="Button" parent="VBoxContainer" unique_id=1240795544]
+[node name="Button1" type="Button" parent="Container/VBoxContainer" unique_id=1240795544]
 texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.043039, 0.04303924, 0.043039076, 1)
 theme_override_fonts/font = ExtResource("1_oa53l")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_d3a7t")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oa53l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3shxk")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_oa53l")
 text = "Start game"
 
-[node name="Button3" type="Button" parent="VBoxContainer" unique_id=779319793]
+[node name="Button3" type="Button" parent="Container/VBoxContainer" unique_id=779319793]
 texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.043039, 0.04303924, 0.043039076, 1)
 theme_override_fonts/font = ExtResource("1_oa53l")
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_d3a7t")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oa53l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3shxk")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_oa53l")
 text = "exit"
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=500010976]
+[node name="Button2" type="Button" parent="Container/VBoxContainer" unique_id=500010976]
 visible = false
 texture_filter = 1
 layout_mode = 2
@@ -161,7 +183,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_3shxk")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_oa53l")
 text = "options"
 
-[node name="Label" type="Label" parent="." unique_id=1907252203]
+[node name="Label" type="Label" parent="Container" unique_id=1907252203]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -169,20 +191,18 @@ anchor_left = 0.21200001
 anchor_top = 0.73800004
 anchor_right = 0.21200001
 anchor_bottom = 0.73800004
-offset_left = 131.77599
-offset_top = -424.22403
-offset_right = 759.776
-offset_bottom = -304.22403
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 26.319992
+offset_top = -225.68002
+offset_right = 509.32
+offset_bottom = -165.68002
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.20392157)
 theme_override_constants/shadow_offset_x = 10
 theme_override_fonts/font = ExtResource("1_oa53l")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 40
 text = "Fahrenheit 39-BC"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Button1" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/Button1" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/Button2" to="." method="_on_options_pressed"]
