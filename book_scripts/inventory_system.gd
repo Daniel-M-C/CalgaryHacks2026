@@ -30,29 +30,19 @@ func empty_cart():
 	pass
 
 
-
 ### MUSIC
-const EGYPTIAN_RUINS_LOUD = preload("uid://88rq3wuice6x")
-const FIRE_AMBIANCE = preload("uid://bxrcwp0v7dp50")
-const RUINED = preload("uid://cw06is6uol1un")
+const EGYPTIAN_RUINS_LOUD = preload("res://music/Egyptian Ruins LOUD.mp3")
+const FIRE_AMBIANCE = preload("res://music/Fire Ambiance.mp3")
+const RUINED = preload("res://music/Ruined.mp3")
+var audio
+var audio2
 
-func _ready():
-	set_music(1)
-	pass
-
-func set_music(num:int):
-	if $Music != null && $Fire != null:
-		match num:
-			1:
-				$Music.set_stream(EGYPTIAN_RUINS_LOUD)
-				$Music.play()
-				pass
-			2:
-				$Music.set_stream(RUINED)
-				$Music.play()
-				$Fire.set_stream(FIRE_AMBIANCE)
-				$Fire.play()
-				pass
-			_:
-				pass
-	pass
+func _input(event):
+	if event.is_action_pressed("5"):
+		audio = $AudioStreamPlayer
+		audio.stream = EGYPTIAN_RUINS_LOUD
+	if event.is_action_pressed("6"):
+		audio = $AudioStreamPlayer
+		audio.stream = RUINED
+		audio2 = $AudioStreamPlayer2
+		audio2.stream = FIRE_AMBIANCE

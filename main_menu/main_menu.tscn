@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://8k2t8n78y7n"]
 
-[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_d3a7t"]
+[ext_resource type="Script" uid="uid://docaam4lfb637" path="res://main_menu/main_menu.gd" id="1_d3a7t"]
 [ext_resource type="FontFile" uid="uid://dxr0li25cacjm" path="res://main_menu/Dalek.ttf" id="1_oa53l"]
-[ext_resource type="Shader" path="res://main_menu/scroll.gdshader" id="2_ia84y"]
+[ext_resource type="Shader" uid="uid://du86futpbigr7" path="res://main_menu/scroll.gdshader" id="2_ia84y"]
 [ext_resource type="Texture2D" uid="uid://cts0ucxdpse0c" path="res://main_menu/sky.PNG" id="3_6at21"]
 [ext_resource type="Texture2D" uid="uid://bx8f4rvafqkgc" path="res://main_menu/river.PNG" id="4_og6xe"]
 [ext_resource type="Texture2D" uid="uid://ycfu53n8qtri" path="res://main_menu/3.png" id="5_mvfl2"]
