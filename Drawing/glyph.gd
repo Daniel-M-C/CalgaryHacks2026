@@ -156,6 +156,7 @@ func change_book(new_book : BookPiece2D) :
 		curr_book.visible = true
 	curr_book = new_book
 	
+	points = []
 	# TODO set to actual things
 	set_parts([0,1,2,3,4,5,6,7,8,9,10])
 	pass
